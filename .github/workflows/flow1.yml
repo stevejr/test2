@@ -24,7 +24,8 @@ jobs:
       - run: pip install mkdocs-material
       - run: |
           set -e
-          cp -pr ./test1/docs ./docs
+          cp -pr ./test1/docs ./test2/docs
+          ls -R
       - run: mkdocs gh-deploy --force
 #       - name: PONG - Dispatch response to received PING
 #         if: github.event.action == 'ping'
