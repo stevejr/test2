@@ -10,6 +10,22 @@ jobs:
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
           echo "Client Payload - Repository: '${{ github.event.client_payload.repository }}', Branch: '${{ github.event.client_payload.branch }}', Tag: '${{ github.event.client_payload.tag }}'"
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Checkout test1 repo
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ github.event.client_payload.repository }}
+          token: ${{ secrets.ACCESS_TOKEN }}
+          path: test1
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material
+      - run: |
+          set -e
+          cp -pr ./test1/docs ./docs
+      - run: mkdocs gh-deploy --force
 #       - name: PONG - Dispatch response to received PING
 #         if: github.event.action == 'ping'
 #         run: |
