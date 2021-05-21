@@ -23,8 +23,8 @@ jobs:
           python-version: 3.x
       - run: pip install mkdocs-material
       - run: |
-          set -e
-          cp -pr ./test1/docs ./test2/docs
+          ls -R
+          cp -pr ./test1/docs ./docs/test1
           ls -R
       - run: mkdocs gh-deploy --force
 #       - name: PONG - Dispatch response to received PING
