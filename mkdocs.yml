@@ -1,15 +1,14 @@
-site_name: Lens Documentation
-site_description: Documentation for Lens IDE. The only system you’ll ever need to take control of your Kubernetes clusters. It's open source and free. Download it today!
-site_author: Mirantis, Inc.
-site_url: https://docs.k8slens.dev
+site_name: Steves Docs
+site_description: Steves Amazing Docs
+site_url: https://stevejr.com
 docs_dir: docs/
 repo_name: GitHub
-repo_url: https://github.com/lensapp/lens
-copyright: Copyright &copy; 2021 <a href="https://mirantis.com/">Mirantis Inc.</a> - All rights reserved.
+repo_url: https://github.com/stevejr/test2
+copyright: Copyright &copy; 2021 <a href="https://mirantis.com/">stevehr</a> - All rights reserved.
 edit_uri: ""
 nav:
   - Overview: README.md
-  - Test2: test1/test1.md
+  - Test1: test1/test1.md
 theme:
   name: 'material'
   highlightjs: true
