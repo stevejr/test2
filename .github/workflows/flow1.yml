@@ -9,7 +9,7 @@ jobs:
       - name: Event Information
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
-          echo "Client Payload: '${{ github.event.client_payload }}'"
+          echo "Client Payload - Repository: '${{ github.event.client_payload.repository }}', Branch: '${{ github.event.client_payload.branch }}', Tag: '${{ github.event.client_payload.tag }}'"
 #       - name: PONG - Dispatch response to received PING
 #         if: github.event.action == 'ping'
 #         run: |
