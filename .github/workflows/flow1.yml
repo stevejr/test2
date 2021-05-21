@@ -10,8 +10,10 @@ jobs:
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
           echo "Client Payload - Repository: '${{ github.event.client_payload.repository }}', Branch: '${{ github.event.client_payload.branch }}', Tag: '${{ github.event.client_payload.tag }}'"
+      - name: Checkout repo
+        uses: actions/checkout@v2
       - name: Checkout test1 repo
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2
         with:
           repository: ${{ github.event.client_payload.repository }}
           token: ${{ secrets.ACCESS_TOKEN }}
