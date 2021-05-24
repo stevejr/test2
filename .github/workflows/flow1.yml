@@ -46,10 +46,8 @@ jobs:
            yarn typedocs-extensions-api
       - name: Consolidate Docs
         run: |
-          ls -R ./lens/docs/extensions
-          ls -R ./docs
           mkdir -p ./docs/api/lens/extensions
-          cp -pr ./lens/docs/extensions/api ./docs/api/lens/extensions
+          cp -pr ./lens/docs/extensions/api/* ./docs/api/lens/extensions
           ls -R ./docs
       - name: Publish Docs
         run: mkdocs gh-deploy --force
