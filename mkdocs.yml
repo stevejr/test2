@@ -8,7 +8,46 @@ copyright: Copyright &copy; 2021 <a href="https://mirantis.com/">stevehr</a> - A
 edit_uri: ""
 nav:
   - Overview: README.md
-  - Test1: test1/docs/test1.md
+  - Getting Started: getting-started/README.md
+  - Managing Clusters:
+    - Adding Clusters: clusters/adding-clusters.md
+    - Removing Clusters: clusters/removing-clusters.md
+    - Settings: clusters/settings.md
+  - Using Helm Charts: helm/README.md
+  - Using Extensions: extensions/usage/README.md
+  - Preferences: getting-started/preferences.md
+  - Extension Development:
+    - Overview: extensions/README.md
+    - Getting Started:
+      - Overview: extensions/get-started/overview.md
+      - Your First Extension: extensions/get-started/your-first-extension.md
+      - Extension Anatomy: extensions/get-started/anatomy.md
+      - Wrapping Up: extensions/get-started/wrapping-up.md
+    - Extension Capabilities:
+      - Common Capabilities: extensions/capabilities/common-capabilities.md
+      - Styling: extensions/capabilities/styling.md
+    - Extension Guides:
+      - Overview: extensions/guides/README.md
+      - Generator: extensions/guides/generator.md
+      - Main Extension: extensions/guides/main-extension.md
+      - Renderer Extension: extensions/guides/renderer-extension.md
+      - Stores: extensions/guides/stores.md
+      - Working with MobX: extensions/guides/working-with-mobx.md
+      - Protocol Handlers: extensions/guides/protocol-handlers.md
+    - Testing and Publishing:
+      - Testing Extensions: extensions/testing-and-publishing/testing.md
+      - Publishing Extensions: extensions/testing-and-publishing/publishing.md
+  - Contributing:
+    - Overview: contributing/README.md
+    - Development: contributing/development.md
+    - Documentation: contributing/documentation.md
+    - Maintainers: contributing/maintainers.md
+    - Promotion: contributing/promotion.md
+  - Support: support/README.md
+  - FAQ: faq/README.md
+  - API Reference: 
+    - Lens IDE Extensions: api/lens/extensions/README.md
+
 theme:
   name: 'material'
   highlightjs: true

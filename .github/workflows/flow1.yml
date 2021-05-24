@@ -6,27 +6,42 @@ jobs:
   verify-docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Event Information
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Install MKDocs Material
+        run: pip install mkdocs-material
+      - name: Received Event Information
         run: |
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
           echo "Client Payload - Repository: '${{ github.event.client_payload.repository }}', Branch: '${{ github.event.client_payload.branch }}', Tag: '${{ github.event.client_payload.tag }}'"
-      - name: Checkout repo
+      - name: Checkout current repo
         uses: actions/checkout@v2
-      - name: Checkout test1 repo
+      # - name: Checkout test1 repo
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: ${{ github.event.client_payload.repository }}
+      #     token: ${{ secrets.ACCESS_TOKEN }}
+      #     path: test1
+      - name: Checkout Lens repo
         uses: actions/checkout@v2
         with:
-          repository: ${{ github.event.client_payload.repository }}
+          repository: stevejr/lens
           token: ${{ secrets.ACCESS_TOKEN }}
-          path: test1
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      - run: pip install mkdocs-material
-      - run: |
+          path: lens
+      - name: Generate Extensions API Reference using typedocs
+        run: |
+           cd lens
+           yarn install
+           yarn typedocs-extensions-api
+      - name: Consolidate Docs
+        run: |
           ls -R
-          cp -pr ./test1/docs ./docs/test1
+          cp -pr ./lens/docs/extensions/api ./docs/api/lens/extensions
           ls -R
-      - run: mkdocs gh-deploy --force
+      - name: Publish Docs
+        run: mkdocs gh-deploy --force
 #       - name: PONG - Dispatch response to received PING
 #         if: github.event.action == 'ping'
 #         run: |
