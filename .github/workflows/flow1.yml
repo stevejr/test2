@@ -10,12 +10,6 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      - name: Install MKDocs Material
-        run: pip install mkdocs-material
       - name: Received Event Information
         run: |
           echo "Event Name from env var: $GITHUB_EVENT_NAME"
@@ -24,12 +18,6 @@ jobs:
           echo "Client Payload - Repository: '${{ github.event.client_payload.repository }}', Branch: '${{ github.event.client_payload.branch }}', Tag: '${{ github.event.client_payload.tag }}'"
       - name: Checkout current repo
         uses: actions/checkout@v2
-      # - name: Checkout test1 repo
-      #   uses: actions/checkout@v2
-      #   with:
-      #     repository: ${{ github.event.client_payload.repository }}
-      #     token: ${{ secrets.ACCESS_TOKEN }}
-      #     path: test1
       - name: Checkout Lens repo
         uses: actions/checkout@v2
         with:
@@ -37,6 +25,12 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           path: lens
           fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Install MKDocs Material
+        run: pip install mkdocs-material
       - name: Using Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -53,10 +47,3 @@ jobs:
           ls -R ./docs
       - name: Publish Docs
         run: mkdocs gh-deploy --force
-#       - name: PONG - Dispatch response to received PING
-#         if: github.event.action == 'ping'
-#         run: |
-#           curl -X POST https://api.github.com/repos/marcnuri-demo/actions-remote-dispatch-a/dispatches \
-#           -H 'Accept: application/vnd.github.everest-preview+json' \
-#           -u ${{ secrets.ACCESS_TOKEN }} \
-#           --data '{"event_type": "pong", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
