@@ -5,6 +5,10 @@ on: [repository_dispatch]
 jobs:
   verify-docs:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -30,6 +34,11 @@ jobs:
           repository: stevejr/lens
           token: ${{ secrets.ACCESS_TOKEN }}
           path: lens
+          fetch-depth: 0
+      - name: Using Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: Generate Extensions API Reference using typedocs
         run: |
            cd lens
