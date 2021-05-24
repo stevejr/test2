@@ -18,7 +18,7 @@ jobs:
         run: pip install mkdocs-material
       - name: Received Event Information
         run: |
-          echo "Event Name: '${{ GITHUB_EVENT_NAME }}"
+          echo "Event Name: '${{ env.GITHUB_EVENT_NAME }}"
           echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
           echo "Client Payload - Repository: '${{ github.event.client_payload.repository }}', Branch: '${{ github.event.client_payload.branch }}', Tag: '${{ github.event.client_payload.tag }}'"
       - name: Checkout current repo
