@@ -44,6 +44,8 @@ jobs:
         run: |
           mkdir -p ./docs/api/lens/extensions
           cp -pr ./lens/docs/extensions/api/* ./docs/api/lens/extensions
+          cp -pr ./lens/docs/extensions/* ./docs/extensions
+          rm -fr ./docs/extensions/api ./docs/extensions/typedoc-readme.md.tpl
           ls -R ./docs
       - name: Publish Docs
         run: mkdocs gh-deploy --force
