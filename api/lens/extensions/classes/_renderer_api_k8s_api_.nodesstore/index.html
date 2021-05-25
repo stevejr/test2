@@ -1,0 +1,2551 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Steves Amazing Docs">
+      
+      
+      
+      
+        <link rel="canonical" href="https://stevejr.com/api/lens/extensions/classes/_renderer_api_k8s_api_.nodesstore/">
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Class: NodesStore - Steves Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#class-nodesstore" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Steves Docs" class="md-header__button md-logo" aria-label="Steves Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Steves Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Class: NodesStore
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/stevejr/test2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Steves Docs" class="md-nav__button md-logo" aria-label="Steves Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Steves Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/stevejr/test2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Managing Clusters
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Managing Clusters" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Managing Clusters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../clusters/adding-clusters/" class="md-nav__link">
+        Adding Clusters
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../clusters/removing-clusters/" class="md-nav__link">
+        Removing Clusters
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../clusters/settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../helm/" class="md-nav__link">
+        Using Helm Charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/usage/" class="md-nav__link">
+        Using Extensions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../getting-started/preferences/" class="md-nav__link">
+        Preferences
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Extension Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extension Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Extension Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      <label class="md-nav__link" for="__nav_7_2">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/get-started/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/get-started/your-first-extension/" class="md-nav__link">
+        Your First Extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/get-started/anatomy/" class="md-nav__link">
+        Extension Anatomy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/get-started/wrapping-up/" class="md-nav__link">
+        Wrapping Up
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      <label class="md-nav__link" for="__nav_7_3">
+        Extension Capabilities
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extension Capabilities" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extension Capabilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/capabilities/common-capabilities/" class="md-nav__link">
+        Common Capabilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/capabilities/styling/" class="md-nav__link">
+        Styling
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+      
+      <label class="md-nav__link" for="__nav_7_4">
+        Extension Guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extension Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Extension Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/generator/" class="md-nav__link">
+        Generator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/main-extension/" class="md-nav__link">
+        Main Extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/renderer-extension/" class="md-nav__link">
+        Renderer Extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/stores/" class="md-nav__link">
+        Stores
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/working-with-mobx/" class="md-nav__link">
+        Working with MobX
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/protocol-handlers/" class="md-nav__link">
+        Protocol Handlers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
+      
+      <label class="md-nav__link" for="__nav_7_5">
+        Testing and Publishing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Testing and Publishing" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Testing and Publishing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/testing-and-publishing/testing/" class="md-nav__link">
+        Testing Extensions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/testing-and-publishing/publishing/" class="md-nav__link">
+        Publishing Extensions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Contributing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contributing/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contributing/development/" class="md-nav__link">
+        Development
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contributing/documentation/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contributing/maintainers/" class="md-nav__link">
+        Maintainers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contributing/promotion/" class="md-nav__link">
+        Promotion
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        API Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Lens IDE Extensions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchy" class="md-nav__link">
+    Hierarchy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    Index
+  </a>
+  
+    <nav class="md-nav" aria-label="Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessors" class="md-nav__link">
+    Accessors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors_1" class="md-nav__link">
+    Constructors
+  </a>
+  
+    <nav class="md-nav" aria-label="Constructors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructor" class="md-nav__link">
+    constructor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    api
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffersize" class="md-nav__link">
+    bufferSize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contextready" class="md-nav__link">
+    contextReady
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-eventsbuffer" class="md-nav__link">
+    Protected eventsBuffer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failedloading" class="md-nav__link">
+    failedLoading
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isloaded" class="md-nav__link">
+    isLoaded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isloading" class="md-nav__link">
+    isLoading
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#items" class="md-nav__link">
+    items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-limit" class="md-nav__link">
+    Optional limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metricsloaded" class="md-nav__link">
+    metricsLoaded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metricsloading" class="md-nav__link">
+    metricsLoading
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespacesready" class="md-nav__link">
+    namespacesReady
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodemetrics" class="md-nav__link">
+    nodeMetrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecteditemsids" class="md-nav__link">
+    selectedItemsIds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-defaultcontext" class="md-nav__link">
+    Static defaultContext
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessors_1" class="md-nav__link">
+    Accessors
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contextitems" class="md-nav__link">
+    contextItems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masternodes" class="md-nav__link">
+    masterNodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecteditems" class="md-nav__link">
+    selectedItems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workernodes" class="md-nav__link">
+    workerNodes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symboliterator" class="md-nav__link">
+    [Symbol.iterator]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-bindwatcheventsupdater" class="md-nav__link">
+    Protected bindWatchEventsUpdater
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-createitem" class="md-nav__link">
+    Protected createItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-defaultsorting" class="md-nav__link">
+    Protected defaultSorting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-filteritemsonload" class="md-nav__link">
+    Protected filterItemsOnLoad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getallbyns" class="md-nav__link">
+    getAllByNs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbyid" class="md-nav__link">
+    getById
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbylabel" class="md-nav__link">
+    getByLabel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbyname" class="md-nav__link">
+    getByName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbypath" class="md-nav__link">
+    getByPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getindexbyid" class="md-nav__link">
+    getIndexById
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getitems" class="md-nav__link">
+    getItems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlastmetricvalues" class="md-nav__link">
+    getLastMetricValues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-getstatuses" class="md-nav__link">
+    Optional getStatuses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getsubscribeapis" class="md-nav__link">
+    getSubscribeApis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettotalcount" class="md-nav__link">
+    getTotalCount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getwarningscount" class="md-nav__link">
+    getWarningsCount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isselected" class="md-nav__link">
+    isSelected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isselectedall" class="md-nav__link">
+    isSelectedAll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load" class="md-nav__link">
+    load
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadall" class="md-nav__link">
+    loadAll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadfrompath" class="md-nav__link">
+    loadFromPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-loaditem" class="md-nav__link">
+    Protected loadItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-loaditems" class="md-nav__link">
+    Protected loadItems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadmetrics" class="md-nav__link">
+    loadMetrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadusagemetrics" class="md-nav__link">
+    loadUsageMetrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-mergeitems" class="md-nav__link">
+    Protected mergeItems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloadall" class="md-nav__link">
+    reloadAll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    remove
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-removeitem" class="md-nav__link">
+    Protected removeItem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removeselecteditems" class="md-nav__link">
+    removeSelectedItems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-resetonerror" class="md-nav__link">
+    Protected resetOnError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetselection" class="md-nav__link">
+    resetSelection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    select
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-sortitems" class="md-nav__link">
+    Protected sortItems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subscribe" class="md-nav__link">
+    subscribe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggleselection" class="md-nav__link">
+    toggleSelection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggleselectionall" class="md-nav__link">
+    toggleSelectionAll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unselect" class="md-nav__link">
+    unselect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-updatefromeventsbuffer" class="md-nav__link">
+    Protected updateFromEventsBuffer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-updateitem" class="md-nav__link">
+    Protected updateItem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="class-nodesstore">Class: NodesStore</h1>
+<h2 id="hierarchy">Hierarchy</h2>
+<p>↳ <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</p>
+<p>↳ <strong>NodesStore</strong></p>
+<h2 id="index">Index</h2>
+<h3 id="constructors">Constructors</h3>
+<ul>
+<li><a href="./#constructor">constructor</a></li>
+</ul>
+<h3 id="properties">Properties</h3>
+<ul>
+<li><a href="./#api">api</a></li>
+<li><a href="./#buffersize">bufferSize</a></li>
+<li><a href="./#contextready">contextReady</a></li>
+<li><a href="./#protected-eventsbuffer">eventsBuffer</a></li>
+<li><a href="./#failedloading">failedLoading</a></li>
+<li><a href="./#isloaded">isLoaded</a></li>
+<li><a href="./#isloading">isLoading</a></li>
+<li><a href="./#items">items</a></li>
+<li><a href="./#optional-limit">limit</a></li>
+<li><a href="./#metrics">metrics</a></li>
+<li><a href="./#metricsloaded">metricsLoaded</a></li>
+<li><a href="./#metricsloading">metricsLoading</a></li>
+<li><a href="./#namespacesready">namespacesReady</a></li>
+<li><a href="./#nodemetrics">nodeMetrics</a></li>
+<li><a href="./#selecteditemsids">selectedItemsIds</a></li>
+<li><a href="./#static-defaultcontext">defaultContext</a></li>
+</ul>
+<h3 id="accessors">Accessors</h3>
+<ul>
+<li><a href="./#context">context</a></li>
+<li><a href="./#contextitems">contextItems</a></li>
+<li><a href="./#masternodes">masterNodes</a></li>
+<li><a href="./#query">query</a></li>
+<li><a href="./#selecteditems">selectedItems</a></li>
+<li><a href="./#workernodes">workerNodes</a></li>
+</ul>
+<h3 id="methods">Methods</h3>
+<ul>
+<li><a href="./#[symbol.iterator]">[Symbol.iterator]</a></li>
+<li><a href="./#protected-bindwatcheventsupdater">bindWatchEventsUpdater</a></li>
+<li><a href="./#create">create</a></li>
+<li><a href="./#protected-createitem">createItem</a></li>
+<li><a href="./#protected-defaultsorting">defaultSorting</a></li>
+<li><a href="./#protected-filteritemsonload">filterItemsOnLoad</a></li>
+<li><a href="./#getallbyns">getAllByNs</a></li>
+<li><a href="./#getbyid">getById</a></li>
+<li><a href="./#getbylabel">getByLabel</a></li>
+<li><a href="./#getbyname">getByName</a></li>
+<li><a href="./#getbypath">getByPath</a></li>
+<li><a href="./#getindexbyid">getIndexById</a></li>
+<li><a href="./#getitems">getItems</a></li>
+<li><a href="./#getlastmetricvalues">getLastMetricValues</a></li>
+<li><a href="./#optional-getstatuses">getStatuses</a></li>
+<li><a href="./#getsubscribeapis">getSubscribeApis</a></li>
+<li><a href="./#gettotalcount">getTotalCount</a></li>
+<li><a href="./#getwarningscount">getWarningsCount</a></li>
+<li><a href="./#isselected">isSelected</a></li>
+<li><a href="./#isselectedall">isSelectedAll</a></li>
+<li><a href="./#load">load</a></li>
+<li><a href="./#loadall">loadAll</a></li>
+<li><a href="./#loadfrompath">loadFromPath</a></li>
+<li><a href="./#protected-loaditem">loadItem</a></li>
+<li><a href="./#protected-loaditems">loadItems</a></li>
+<li><a href="./#loadmetrics">loadMetrics</a></li>
+<li><a href="./#loadusagemetrics">loadUsageMetrics</a></li>
+<li><a href="./#protected-mergeitems">mergeItems</a></li>
+<li><a href="./#reloadall">reloadAll</a></li>
+<li><a href="./#remove">remove</a></li>
+<li><a href="./#protected-removeitem">removeItem</a></li>
+<li><a href="./#removeselecteditems">removeSelectedItems</a></li>
+<li><a href="./#reset">reset</a></li>
+<li><a href="./#protected-resetonerror">resetOnError</a></li>
+<li><a href="./#resetselection">resetSelection</a></li>
+<li><a href="./#select">select</a></li>
+<li><a href="./#protected-sortitems">sortItems</a></li>
+<li><a href="./#subscribe">subscribe</a></li>
+<li><a href="./#toggleselection">toggleSelection</a></li>
+<li><a href="./#toggleselectionall">toggleSelectionAll</a></li>
+<li><a href="./#unselect">unselect</a></li>
+<li><a href="./#update">update</a></li>
+<li><a href="./#protected-updatefromeventsbuffer">updateFromEventsBuffer</a></li>
+<li><a href="./#protected-updateitem">updateItem</a></li>
+</ul>
+<h2 id="constructors_1">Constructors</h2>
+<h3 id="constructor">constructor</h3>
+<p>+ <strong>new NodesStore</strong>(): <em><a href="./">NodesStore</a></em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#constructor">constructor</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L50">src/renderer/kube-object.store.ts:50</a></em></p>
+<p><strong>Returns:</strong> <em><a href="./">NodesStore</a></em></p>
+<h2 id="properties_1">Properties</h2>
+<h3 id="api">api</h3>
+<p>• <strong>api</strong>: <em><a href="../_renderer_api_k8s_api_.nodesapi/">NodesApi</a>‹›</em> = nodesApi</p>
+<p><em>Overrides <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#abstract-api">api</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L31">src/renderer/components/+nodes/nodes.store.ts:31</a></em></p>
+<hr />
+<h3 id="buffersize">bufferSize</h3>
+<p>• <strong>bufferSize</strong>: <em>number</em> = 50000</p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#buffersize">bufferSize</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L46">src/renderer/kube-object.store.ts:46</a></em></p>
+<hr />
+<h3 id="contextready">contextReady</h3>
+<p>• <strong>contextReady</strong>: <em>Promise‹void› &amp; object</em> = when(() =&gt; Boolean(this.context))</p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#contextready">contextReady</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L49">src/renderer/kube-object.store.ts:49</a></em></p>
+<hr />
+<h3 id="protected-eventsbuffer"><code>Protected</code> eventsBuffer</h3>
+<p>• <strong>eventsBuffer</strong>: <em>IObservableArray‹IKubeWatchEvent‹KubeJsonApiData››</em> = observable.array<IKubeWatchEvent\<KubeJsonApiData>>([], { deep: false })</p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-eventsbuffer">eventsBuffer</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L295">src/renderer/kube-object.store.ts:295</a></em></p>
+<hr />
+<h3 id="failedloading">failedLoading</h3>
+<p>• <strong>failedLoading</strong>: <em>boolean</em> = false</p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#failedloading">failedLoading</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L37">src/renderer/item.store.ts:37</a></em></p>
+<hr />
+<h3 id="isloaded">isLoaded</h3>
+<p>• <strong>isLoaded</strong>: <em>boolean</em> = false</p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#isloaded">isLoaded</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L39">src/renderer/item.store.ts:39</a></em></p>
+<hr />
+<h3 id="isloading">isLoading</h3>
+<p>• <strong>isLoading</strong>: <em>boolean</em> = false</p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#isloading">isLoading</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L38">src/renderer/item.store.ts:38</a></em></p>
+<hr />
+<h3 id="items">items</h3>
+<p>• <strong>items</strong>: <em>IObservableArray‹T›</em> = observable.array<T>([], { deep: false })</p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#items">items</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L40">src/renderer/item.store.ts:40</a></em></p>
+<hr />
+<h3 id="optional-limit"><code>Optional</code> limit</h3>
+<p>• <strong>limit</strong>? : <em>number</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#optional-limit">limit</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L45">src/renderer/kube-object.store.ts:45</a></em></p>
+<hr />
+<h3 id="metrics">metrics</h3>
+<p>• <strong>metrics</strong>: <em>Partial‹INodeMetrics›</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L33">src/renderer/components/+nodes/nodes.store.ts:33</a></em></p>
+<hr />
+<h3 id="metricsloaded">metricsLoaded</h3>
+<p>• <strong>metricsLoaded</strong>: <em>boolean</em> = false</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L36">src/renderer/components/+nodes/nodes.store.ts:36</a></em></p>
+<hr />
+<h3 id="metricsloading">metricsLoading</h3>
+<p>• <strong>metricsLoading</strong>: <em>boolean</em> = false</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L35">src/renderer/components/+nodes/nodes.store.ts:35</a></em></p>
+<hr />
+<h3 id="namespacesready">namespacesReady</h3>
+<p>• <strong>namespacesReady</strong>: <em>Promise‹void› &amp; object</em> = when(() =&gt; Boolean(this.loadedNamespaces))</p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#namespacesready">namespacesReady</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L50">src/renderer/kube-object.store.ts:50</a></em></p>
+<hr />
+<h3 id="nodemetrics">nodeMetrics</h3>
+<p>• <strong>nodeMetrics</strong>: <em>Partial‹IClusterMetrics›</em> = null</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L34">src/renderer/components/+nodes/nodes.store.ts:34</a></em></p>
+<hr />
+<h3 id="selecteditemsids">selectedItemsIds</h3>
+<p>• <strong>selectedItemsIds</strong>: <em>ObservableMap‹string, boolean›</em> = observable.map<string, boolean>()</p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#selecteditemsids">selectedItemsIds</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L41">src/renderer/item.store.ts:41</a></em></p>
+<hr />
+<h3 id="static-defaultcontext"><code>Static</code> defaultContext</h3>
+<p>▪ <strong>defaultContext</strong>: <em>ClusterContext</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#static-defaultcontext">defaultContext</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L42">src/renderer/kube-object.store.ts:42</a></em></p>
+<h2 id="accessors_1">Accessors</h2>
+<h3 id="context">context</h3>
+<p>• <strong>get context</strong>(): <em>ClusterContext</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#context">context</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L57">src/renderer/kube-object.store.ts:57</a></em></p>
+<p><strong>Returns:</strong> <em>ClusterContext</em></p>
+<hr />
+<h3 id="contextitems">contextItems</h3>
+<p>• <strong>get contextItems</strong>(): <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#contextitems">contextItems</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L61">src/renderer/kube-object.store.ts:61</a></em></p>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<hr />
+<h3 id="masternodes">masterNodes</h3>
+<p>• <strong>get masterNodes</strong>(): <em><a href="../_renderer_api_k8s_api_.node/">Node</a>‹›[]</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L55">src/renderer/components/+nodes/nodes.store.ts:55</a></em></p>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a>‹›[]</em></p>
+<hr />
+<h3 id="query">query</h3>
+<p>• <strong>get query</strong>(): <em>IKubeApiQueryParams</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#query">query</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L75">src/renderer/kube-object.store.ts:75</a></em></p>
+<p><strong>Returns:</strong> <em>IKubeApiQueryParams</em></p>
+<hr />
+<h3 id="selecteditems">selectedItems</h3>
+<p>• <strong>get selectedItems</strong>(): <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#selecteditems">selectedItems</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L43">src/renderer/item.store.ts:43</a></em></p>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<hr />
+<h3 id="workernodes">workerNodes</h3>
+<p>• <strong>get workerNodes</strong>(): <em><a href="../_renderer_api_k8s_api_.node/">Node</a>‹›[]</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L59">src/renderer/components/+nodes/nodes.store.ts:59</a></em></p>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a>‹›[]</em></p>
+<h2 id="methods_1">Methods</h2>
+<h3 id="symboliterator">[Symbol.iterator]</h3>
+<p>▸ <strong>[Symbol.iterator]</strong>(): <em>Generator‹T, void, undefined›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#[symbol.iterator]">[Symbol.iterator]</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L217">src/renderer/item.store.ts:217</a></em></p>
+<p><strong>Returns:</strong> <em>Generator‹T, void, undefined›</em></p>
+<hr />
+<h3 id="protected-bindwatcheventsupdater"><code>Protected</code> bindWatchEventsUpdater</h3>
+<p>▸ <strong>bindWatchEventsUpdater</strong>(<code>delay</code>: number): <em>void</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-bindwatcheventsupdater">bindWatchEventsUpdater</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L297">src/renderer/kube-object.store.ts:297</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>delay</code></td>
+<td>number</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="create">create</h3>
+<p>▸ <strong>create</strong>(<code>params</code>: object, <code>data?</code>: Partial‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›): <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#create">create</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L266">src/renderer/kube-object.store.ts:266</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪ <strong>params</strong>: <em>object</em></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>namespace?</code></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p>▪<code>Optional</code>  <strong>data</strong>: <em>Partial‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<p><strong>Returns:</strong> <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<hr />
+<h3 id="protected-createitem"><code>Protected</code> createItem</h3>
+<p>▸ <strong>createItem</strong>(<code>params</code>: object, <code>data?</code>: Partial‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›): <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-createitem">createItem</a></em></p>
+<p><em>Overrides void</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L262">src/renderer/kube-object.store.ts:262</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪ <strong>params</strong>: <em>object</em></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>namespace?</code></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p>▪<code>Optional</code>  <strong>data</strong>: <em>Partial‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<p><strong>Returns:</strong> <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<hr />
+<h3 id="protected-defaultsorting"><code>Protected</code> defaultSorting</h3>
+<p>▸ <strong>defaultSorting</strong>(<code>item</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>): <em>string</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-defaultsorting">defaultSorting</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L35">src/renderer/item.store.ts:35</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>string</em></p>
+<hr />
+<h3 id="protected-filteritemsonload"><code>Protected</code> filterItemsOnLoad</h3>
+<p>▸ <strong>filterItemsOnLoad</strong>(<code>items</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>[]): <em>T[]</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-filteritemsonload">filterItemsOnLoad</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L160">src/renderer/kube-object.store.ts:160</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>items</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>T[]</em></p>
+<hr />
+<h3 id="getallbyns">getAllByNs</h3>
+<p>▸ <strong>getAllByNs</strong>(<code>namespace</code>: string | string[], <code>strict</code>: boolean): <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#getallbyns">getAllByNs</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L87">src/renderer/kube-object.store.ts:87</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>namespace</code></td>
+<td>string &#124; string[]</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>strict</code></td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<hr />
+<h3 id="getbyid">getById</h3>
+<p>▸ <strong>getById</strong>(<code>id</code>: string): <em>T</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#getbyid">getById</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L101">src/renderer/kube-object.store.ts:101</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>T</em></p>
+<hr />
+<h3 id="getbylabel">getByLabel</h3>
+<p>▸ <strong>getByLabel</strong>(<code>labels</code>: string[] | object): <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#getbylabel">getByLabel</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L117">src/renderer/kube-object.store.ts:117</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>labels</code></td>
+<td>string[] &#124; object</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<hr />
+<h3 id="getbyname">getByName</h3>
+<p>▸ <strong>getByName</strong>(<code>name</code>: string, <code>namespace?</code>: string): <em><a href="../_renderer_api_k8s_api_.node/">Node</a></em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#getbyname">getByName</a></em></p>
+<p><em>Overrides void</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L105">src/renderer/kube-object.store.ts:105</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>namespace?</code></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a></em></p>
+<hr />
+<h3 id="getbypath">getByPath</h3>
+<p>▸ <strong>getByPath</strong>(<code>path</code>: string): <em><a href="../_renderer_api_k8s_api_.node/">Node</a></em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#getbypath">getByPath</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L113">src/renderer/kube-object.store.ts:113</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a></em></p>
+<hr />
+<h3 id="getindexbyid">getIndexById</h3>
+<p>▸ <strong>getIndexById</strong>(<code>id</code>: string): <em>number</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#getindexbyid">getIndexById</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L60">src/renderer/item.store.ts:60</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h3 id="getitems">getItems</h3>
+<p>▸ <strong>getItems</strong>(): <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#getitems">getItems</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L47">src/renderer/item.store.ts:47</a></em></p>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<hr />
+<h3 id="getlastmetricvalues">getLastMetricValues</h3>
+<p>▸ <strong>getLastMetricValues</strong>(<code>node</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>, <code>metricNames</code>: string[]): <em>number[]</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L63">src/renderer/components/+nodes/nodes.store.ts:63</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>node</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a></td>
+</tr>
+<tr>
+<td><code>metricNames</code></td>
+<td>string[]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>number[]</em></p>
+<hr />
+<h3 id="optional-getstatuses"><code>Optional</code> getStatuses</h3>
+<p>▸ <strong>getStatuses</strong>(<code>items</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>[]): <em>Record‹string, number›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#optional-getstatuses">getStatuses</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L85">src/renderer/kube-object.store.ts:85</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>items</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Record‹string, number›</em></p>
+<hr />
+<h3 id="getsubscribeapis">getSubscribeApis</h3>
+<p>▸ <strong>getSubscribeApis</strong>(): <em><a href="../_renderer_api_k8s_api_.kubeapi/">KubeApi</a>[]</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#getsubscribeapis">getSubscribeApis</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L303">src/renderer/kube-object.store.ts:303</a></em></p>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.kubeapi/">KubeApi</a>[]</em></p>
+<hr />
+<h3 id="gettotalcount">getTotalCount</h3>
+<p>▸ <strong>getTotalCount</strong>(): <em>number</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#gettotalcount">getTotalCount</a></em></p>
+<p><em>Overrides void</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L71">src/renderer/kube-object.store.ts:71</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h3 id="getwarningscount">getWarningsCount</h3>
+<p>▸ <strong>getWarningsCount</strong>(): <em>number</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L87">src/renderer/components/+nodes/nodes.store.ts:87</a></em></p>
+<p><strong>Returns:</strong> <em>number</em></p>
+<hr />
+<h3 id="isselected">isSelected</h3>
+<p>▸ <strong>isSelected</strong>(<code>item</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>): <em>boolean</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#isselected">isSelected</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L156">src/renderer/item.store.ts:156</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>boolean</em></p>
+<hr />
+<h3 id="isselectedall">isSelectedAll</h3>
+<p>▸ <strong>isSelectedAll</strong>(<code>visibleItems</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>[]): <em>boolean</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#isselectedall">isSelectedAll</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L190">src/renderer/item.store.ts:190</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>visibleItems</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</td>
+<td>this.items</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>boolean</em></p>
+<hr />
+<h3 id="load">load</h3>
+<p>▸ <strong>load</strong>(<code>params</code>: object): <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#load">load</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L241">src/renderer/kube-object.store.ts:241</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪ <strong>params</strong>: <em>object</em></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>namespace?</code></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<hr />
+<h3 id="loadall">loadAll</h3>
+<p>▸ <strong>loadAll</strong>(<code>options</code>: object): <em>Promise‹void | <a href="../_renderer_api_k8s_api_.node/">Node</a>[]›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#loadall">loadAll</a></em></p>
+<p><em>Overrides void</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L165">src/renderer/kube-object.store.ts:165</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪<code>Default value</code>  <strong>options</strong>: <em>object</em>= {}</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>merge?</code></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code>namespaces?</code></td>
+<td>string[]</td>
+</tr>
+<tr>
+<td><code>reqInit?</code></td>
+<td>RequestInit</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Promise‹void | <a href="../_renderer_api_k8s_api_.node/">Node</a>[]›</em></p>
+<hr />
+<h3 id="loadfrompath">loadFromPath</h3>
+<p>▸ <strong>loadFromPath</strong>(<code>resourcePath</code>: string): <em>Promise‹T›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#loadfrompath">loadFromPath</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L256">src/renderer/kube-object.store.ts:256</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>resourcePath</code></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Promise‹T›</em></p>
+<hr />
+<h3 id="protected-loaditem"><code>Protected</code> loadItem</h3>
+<p>▸ <strong>loadItem</strong>(<code>params</code>: object): <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-loaditem">loadItem</a></em></p>
+<p><em>Overrides void</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L236">src/renderer/kube-object.store.ts:236</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪ <strong>params</strong>: <em>object</em></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>namespace?</code></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<hr />
+<h3 id="protected-loaditems"><code>Protected</code> loadItems</h3>
+<p>▸ <strong>loadItems</strong>(<code>__namedParameters</code>: object): <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>[]›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-loaditems">loadItems</a></em></p>
+<p><em>Overrides void</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L134">src/renderer/kube-object.store.ts:134</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪ <strong>__namedParameters</strong>: <em>object</em></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api</code></td>
+<td><a href="../_renderer_api_k8s_api_.kubeapi/">KubeApi</a>‹any›</td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td>string[]</td>
+</tr>
+<tr>
+<td><code>reqInit</code></td>
+<td>RequestInit</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>[]›</em></p>
+<hr />
+<h3 id="loadmetrics">loadMetrics</h3>
+<p>▸ <strong>loadMetrics</strong>(<code>nodeName</code>: string): <em>Promise‹void›</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L51">src/renderer/components/+nodes/nodes.store.ts:51</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nodeName</code></td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Promise‹void›</em></p>
+<hr />
+<h3 id="loadusagemetrics">loadUsageMetrics</h3>
+<p>▸ <strong>loadUsageMetrics</strong>(): <em>Promise‹void›</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L39">src/renderer/components/+nodes/nodes.store.ts:39</a></em></p>
+<p><strong>Returns:</strong> <em>Promise‹void›</em></p>
+<hr />
+<h3 id="protected-mergeitems"><code>Protected</code> mergeItems</h3>
+<p>▸ <strong>mergeItems</strong>(<code>partialItems</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>[], <code>__namedParameters</code>: object): <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-mergeitems">mergeItems</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L212">src/renderer/kube-object.store.ts:212</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪ <strong>partialItems</strong>: <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<p>▪<code>Default value</code>  <strong>__namedParameters</strong>: <em>object</em>= {}</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>filter</code></td>
+<td>boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>replace</code></td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>updateStore</code></td>
+<td>boolean</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<hr />
+<h3 id="reloadall">reloadAll</h3>
+<p>▸ <strong>reloadAll</strong>(<code>opts</code>: object): <em>Promise‹void | T[]›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#reloadall">reloadAll</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L201">src/renderer/kube-object.store.ts:201</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪<code>Default value</code>  <strong>opts</strong>: <em>object</em>= {}</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>force?</code></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code>merge?</code></td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><code>namespaces?</code></td>
+<td>string[]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Promise‹void | T[]›</em></p>
+<hr />
+<h3 id="remove">remove</h3>
+<p>▸ <strong>remove</strong>(<code>item</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>): <em>Promise‹void›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#remove">remove</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L284">src/renderer/kube-object.store.ts:284</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Promise‹void›</em></p>
+<hr />
+<h3 id="protected-removeitem"><code>Protected</code> removeItem</h3>
+<p>▸ <strong>removeItem</strong>(<code>item</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>, <code>request</code>: function): <em>Promise‹void›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-removeitem">removeItem</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L150">src/renderer/item.store.ts:150</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪ <strong>item</strong>: <em><a href="../_renderer_api_k8s_api_.node/">Node</a></em></p>
+<p>▪ <strong>request</strong>: <em>function</em></p>
+<p>▸ (): <em>Promise‹any›</em></p>
+<p><strong>Returns:</strong> <em>Promise‹void›</em></p>
+<hr />
+<h3 id="removeselecteditems">removeSelectedItems</h3>
+<p>▸ <strong>removeSelectedItems</strong>(): <em>Promise‹void[]›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#removeselecteditems">removeSelectedItems</a></em></p>
+<p><em>Overrides void</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L290">src/renderer/kube-object.store.ts:290</a></em></p>
+<p><strong>Returns:</strong> <em>Promise‹void[]›</em></p>
+<hr />
+<h3 id="reset">reset</h3>
+<p>▸ <strong>reset</strong>(): <em>void</em></p>
+<p><em>Overrides <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#reset">reset</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/+nodes/nodes.store.ts#L91">src/renderer/components/+nodes/nodes.store.ts:91</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="protected-resetonerror"><code>Protected</code> resetOnError</h3>
+<p>▸ <strong>resetOnError</strong>(<code>error</code>: any): <em>void</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-resetonerror">resetOnError</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L232">src/renderer/kube-object.store.ts:232</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td>any</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="resetselection">resetSelection</h3>
+<p>▸ <strong>resetSelection</strong>(): <em>void</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#resetselection">resetSelection</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L197">src/renderer/item.store.ts:197</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="select">select</h3>
+<p>▸ <strong>select</strong>(<code>item</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>): <em>void</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#select">select</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L161">src/renderer/item.store.ts:161</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="protected-sortitems"><code>Protected</code> sortItems</h3>
+<p>▸ <strong>sortItems</strong>(<code>items</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>[], <code>sorting</code>: function[], <code>order?</code>: "asc" | "desc"): <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-sortitems">sortItems</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L74">src/renderer/item.store.ts:74</a></em></p>
+<p>Return <code>items</code> sorted by the given ordering functions. If two elements of
+<code>items</code> are sorted to the same "index" then the next sorting function is used
+to determine where to place them relative to each other. Once the <code>sorting</code>
+functions have been all exhausted then the order is unchanged (ie a stable sort).</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>items</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</td>
+<td>this.items</td>
+<td>the items to be sorted (default: the current items in this store)</td>
+</tr>
+<tr>
+<td><code>sorting</code></td>
+<td>function[]</td>
+<td>[this.defaultSorting]</td>
+<td>list of functions to determine sort order (default: sorting by name)</td>
+</tr>
+<tr>
+<td><code>order?</code></td>
+<td>"asc" &#124; "desc"</td>
+<td>-</td>
+<td>whether to sort from least to greatest (<code>"asc"</code> (default)) or vice-versa (<code>"desc"</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</em></p>
+<hr />
+<h3 id="subscribe">subscribe</h3>
+<p>▸ <strong>subscribe</strong>(<code>apis</code>: <a href="../_renderer_api_k8s_api_.kubeapi/">KubeApi</a>‹any›[]): <em>(Anonymous function)</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#subscribe">subscribe</a></em></p>
+<p><em>Overrides void</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L307">src/renderer/kube-object.store.ts:307</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>apis</code></td>
+<td><a href="../_renderer_api_k8s_api_.kubeapi/">KubeApi</a>‹any›[]</td>
+<td>this.getSubscribeApis()</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>(Anonymous function)</em></p>
+<hr />
+<h3 id="toggleselection">toggleSelection</h3>
+<p>▸ <strong>toggleSelection</strong>(<code>item</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>): <em>void</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#toggleselection">toggleSelection</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L171">src/renderer/item.store.ts:171</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="toggleselectionall">toggleSelectionAll</h3>
+<p>▸ <strong>toggleSelectionAll</strong>(<code>visibleItems</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>[]): <em>void</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#toggleselectionall">toggleSelectionAll</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L180">src/renderer/item.store.ts:180</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>visibleItems</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a>[]</td>
+<td>this.items</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="unselect">unselect</h3>
+<p>▸ <strong>unselect</strong>(<code>item</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>): <em>void</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#unselect">unselect</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L166">src/renderer/item.store.ts:166</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="update">update</h3>
+<p>▸ <strong>update</strong>(<code>item</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>, <code>data</code>: Partial‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›): <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#update">update</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L275">src/renderer/kube-object.store.ts:275</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item</code></td>
+<td><a href="../_renderer_api_k8s_api_.node/">Node</a></td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td>Partial‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<hr />
+<h3 id="protected-updatefromeventsbuffer"><code>Protected</code> updateFromEventsBuffer</h3>
+<p>▸ <strong>updateFromEventsBuffer</strong>(): <em>void</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-updatefromeventsbuffer">updateFromEventsBuffer</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/kube-object.store.ts#L392">src/renderer/kube-object.store.ts:392</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="protected-updateitem"><code>Protected</code> updateItem</h3>
+<p>▸ <strong>updateItem</strong>(<code>item</code>: <a href="../_renderer_api_k8s_api_.node/">Node</a>, <code>request</code>: function): <em>Promise‹T›</em></p>
+<p><em>Inherited from <a href="../_renderer_api_k8s_api_.kubeobjectstore/">KubeObjectStore</a>.<a href="../_renderer_api_k8s_api_.kubeobjectstore/#protected-updateitem">updateItem</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/item.store.ts#L140">src/renderer/item.store.ts:140</a></em></p>
+<p><strong>Parameters:</strong></p>
+<p>▪ <strong>item</strong>: <em><a href="../_renderer_api_k8s_api_.node/">Node</a></em></p>
+<p>▪ <strong>request</strong>: <em>function</em></p>
+<p>▸ (): <em>Promise‹<a href="../_renderer_api_k8s_api_.node/">Node</a>›</em></p>
+<p><strong>Returns:</strong> <em>Promise‹T›</em></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 <a href="https://mirantis.com/">stevehr</a> - All rights reserved.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>

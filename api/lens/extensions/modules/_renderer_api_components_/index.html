@@ -1,0 +1,1938 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Steves Amazing Docs">
+      
+      
+      
+      
+        <link rel="canonical" href="https://stevejr.com/api/lens/extensions/modules/_renderer_api_components_/">
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Module: "renderer-api/components" - Steves Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-renderer-apicomponents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Steves Docs" class="md-header__button md-logo" aria-label="Steves Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Steves Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module: "renderer-api/components"
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/stevejr/test2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Steves Docs" class="md-nav__button md-logo" aria-label="Steves Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Steves Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/stevejr/test2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Managing Clusters
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Managing Clusters" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Managing Clusters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../clusters/adding-clusters/" class="md-nav__link">
+        Adding Clusters
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../clusters/removing-clusters/" class="md-nav__link">
+        Removing Clusters
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../clusters/settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../helm/" class="md-nav__link">
+        Using Helm Charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/usage/" class="md-nav__link">
+        Using Extensions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../getting-started/preferences/" class="md-nav__link">
+        Preferences
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Extension Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extension Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Extension Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      <label class="md-nav__link" for="__nav_7_2">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/get-started/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/get-started/your-first-extension/" class="md-nav__link">
+        Your First Extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/get-started/anatomy/" class="md-nav__link">
+        Extension Anatomy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/get-started/wrapping-up/" class="md-nav__link">
+        Wrapping Up
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      <label class="md-nav__link" for="__nav_7_3">
+        Extension Capabilities
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extension Capabilities" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extension Capabilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/capabilities/common-capabilities/" class="md-nav__link">
+        Common Capabilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/capabilities/styling/" class="md-nav__link">
+        Styling
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+      
+      <label class="md-nav__link" for="__nav_7_4">
+        Extension Guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extension Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Extension Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/generator/" class="md-nav__link">
+        Generator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/main-extension/" class="md-nav__link">
+        Main Extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/renderer-extension/" class="md-nav__link">
+        Renderer Extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/stores/" class="md-nav__link">
+        Stores
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/working-with-mobx/" class="md-nav__link">
+        Working with MobX
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/guides/protocol-handlers/" class="md-nav__link">
+        Protocol Handlers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
+      
+      <label class="md-nav__link" for="__nav_7_5">
+        Testing and Publishing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Testing and Publishing" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Testing and Publishing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/testing-and-publishing/testing/" class="md-nav__link">
+        Testing Extensions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extensions/testing-and-publishing/publishing/" class="md-nav__link">
+        Publishing Extensions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Contributing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contributing/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contributing/development/" class="md-nav__link">
+        Development
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contributing/documentation/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contributing/maintainers/" class="md-nav__link">
+        Maintainers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contributing/promotion/" class="md-nav__link">
+        Promotion
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        API Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Lens IDE Extensions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    Index
+  </a>
+  
+    <nav class="md-nav" aria-label="Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    Enumerations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaces" class="md-nav__link">
+    Interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-aliases" class="md-nav__link">
+    Type aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-literals" class="md-nav__link">
+    Object literals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-aliases_1" class="md-nav__link">
+    Type aliases
+  </a>
+  
+    <nav class="md-nav" aria-label="Type aliases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputprops" class="md-nav__link">
+    InputProps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menucontextvalue" class="md-nav__link">
+    MenuContextValue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notificationid" class="md-nav__link">
+    NotificationId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notificationmessage" class="md-nav__link">
+    NotificationMessage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radioprops" class="md-nav__link">
+    RadioProps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablecellelem" class="md-nav__link">
+    TableCellElem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tableheadelem" class="md-nav__link">
+    TableHeadElem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tableorderby" class="md-nav__link">
+    TableOrderBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablerowelem" class="md-nav__link">
+    TableRowElem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablesortby" class="md-nav__link">
+    TableSortBy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablesortcallback" class="md-nav__link">
+    TableSortCallback
+  </a>
+  
+    <nav class="md-nav" aria-label="TableSortCallback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-declaration" class="md-nav__link">
+    Type declaration:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablesortcallbacks" class="md-nav__link">
+    TableSortCallbacks
+  </a>
+  
+    <nav class="md-nav" aria-label="TableSortCallbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-declaration_1" class="md-nav__link">
+    Type declaration:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablesortparams" class="md-nav__link">
+    TableSortParams
+  </a>
+  
+    <nav class="md-nav" aria-label="TableSortParams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-declaration_2" class="md-nav__link">
+    Type declaration:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables_1" class="md-nav__link">
+    Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputvalidators" class="md-nav__link">
+    InputValidators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-menucontext" class="md-nav__link">
+    Const MenuContext
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-switcher" class="md-nav__link">
+    Const Switcher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-tablayout" class="md-nav__link">
+    Const TabLayout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-kubedetailsurlparam" class="md-nav__link">
+    Const kubeDetailsUrlParam
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-kubeselectedurlparam" class="md-nav__link">
+    Const kubeSelectedUrlParam
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-logtabstore" class="md-nav__link">
+    Const logTabStore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-notificationsstore" class="md-nav__link">
+    Const notificationsStore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-orderbyurlparam" class="md-nav__link">
+    Const orderByUrlParam
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-sortbyurlparam" class="md-nav__link">
+    Const sortByUrlParam
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-terminalstore" class="md-nav__link">
+    Const terminalStore
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions_1" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#draweritemlabels" class="md-nav__link">
+    DrawerItemLabels
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formswitch" class="md-nav__link">
+    FormSwitch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submenu" class="md-nav__link">
+    SubMenu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createterminaltab" class="md-nav__link">
+    createTerminalTab
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdetailsurl" class="md-nav__link">
+    getDetailsUrl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hidedetails" class="md-nav__link">
+    hideDetails
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#showdetails" class="md-nav__link">
+    showDetails
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#withtooltip" class="md-nav__link">
+    withTooltip
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-literals_1" class="md-nav__link">
+    Object literals
+  </a>
+  
+    <nav class="md-nav" aria-label="Object literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#const-cpuoptions" class="md-nav__link">
+    Const cpuOptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpuoptions-object" class="md-nav__link">
+    ▪ cpuOptions: object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#const-memoryoptions" class="md-nav__link">
+    Const memoryOptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memoryoptions-object" class="md-nav__link">
+    ▪ memoryOptions: object
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="module-renderer-apicomponents">Module: "renderer-api/components"</h1>
+<h2 id="index">Index</h2>
+<h3 id="enumerations">Enumerations</h3>
+<ul>
+<li><a href="../../enums/_renderer_api_components_.notificationstatus/">NotificationStatus</a></li>
+<li><a href="../../enums/_renderer_api_components_.tooltipposition/">TooltipPosition</a></li>
+</ul>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="../../classes/_renderer_api_components_.badge/">Badge</a></li>
+<li><a href="../../classes/_renderer_api_components_.barchart/">BarChart</a></li>
+<li><a href="../../classes/_renderer_api_components_.button/">Button</a></li>
+<li><a href="../../classes/_renderer_api_components_.checkbox/">Checkbox</a></li>
+<li><a href="../../classes/_renderer_api_components_.commandoverlay/">CommandOverlay</a></li>
+<li><a href="../../classes/_renderer_api_components_.confirmdialog/">ConfirmDialog</a></li>
+<li><a href="../../classes/_renderer_api_components_.cubespinner/">CubeSpinner</a></li>
+<li><a href="../../classes/_renderer_api_components_.dialog/">Dialog</a></li>
+<li><a href="../../classes/_renderer_api_components_.drawer/">Drawer</a></li>
+<li><a href="../../classes/_renderer_api_components_.draweritem/">DrawerItem</a></li>
+<li><a href="../../classes/_renderer_api_components_.drawerparamtoggler/">DrawerParamToggler</a></li>
+<li><a href="../../classes/_renderer_api_components_.drawertitle/">DrawerTitle</a></li>
+<li><a href="../../classes/_renderer_api_components_.icon/">Icon</a></li>
+<li><a href="../../classes/_renderer_api_components_.input/">Input</a></li>
+<li><a href="../../classes/_renderer_api_components_.kubeeventdetails/">KubeEventDetails</a></li>
+<li><a href="../../classes/_renderer_api_components_.kubeobjectdetails/">KubeObjectDetails</a></li>
+<li><a href="../../classes/_renderer_api_components_.kubeobjectlistlayout/">KubeObjectListLayout</a></li>
+<li><a href="../../classes/_renderer_api_components_.kubeobjectmenu/">KubeObjectMenu</a></li>
+<li><a href="../../classes/_renderer_api_components_.kubeobjectmeta/">KubeObjectMeta</a></li>
+<li><a href="../../classes/_renderer_api_components_.lineprogress/">LineProgress</a></li>
+<li><a href="../../classes/_renderer_api_components_.menu/">Menu</a></li>
+<li><a href="../../classes/_renderer_api_components_.menuactions/">MenuActions</a></li>
+<li><a href="../../classes/_renderer_api_components_.menuitem/">MenuItem</a></li>
+<li><a href="../../classes/_renderer_api_components_.namespaceselect/">NamespaceSelect</a></li>
+<li><a href="../../classes/_renderer_api_components_.notifications/">Notifications</a></li>
+<li><a href="../../classes/_renderer_api_components_.notificationsstore/">NotificationsStore</a></li>
+<li><a href="../../classes/_renderer_api_components_.pagelayout/">PageLayout</a></li>
+<li><a href="../../classes/_renderer_api_components_.piechart/">PieChart</a></li>
+<li><a href="../../classes/_renderer_api_components_.poddetailslist/">PodDetailsList</a></li>
+<li><a href="../../classes/_renderer_api_components_.radio/">Radio</a></li>
+<li><a href="../../classes/_renderer_api_components_.radiogroup/">RadioGroup</a></li>
+<li><a href="../../classes/_renderer_api_components_.searchinput/">SearchInput</a></li>
+<li><a href="../../classes/_renderer_api_components_.select/">Select</a></li>
+<li><a href="../../classes/_renderer_api_components_.slider/">Slider</a></li>
+<li><a href="../../classes/_renderer_api_components_.spinner/">Spinner</a></li>
+<li><a href="../../classes/_renderer_api_components_.statusbrick/">StatusBrick</a></li>
+<li><a href="../../classes/_renderer_api_components_.stepper/">Stepper</a></li>
+<li><a href="../../classes/_renderer_api_components_.subtitle/">SubTitle</a></li>
+<li><a href="../../classes/_renderer_api_components_.tab/">Tab</a></li>
+<li><a href="../../classes/_renderer_api_components_.table/">Table</a></li>
+<li><a href="../../classes/_renderer_api_components_.tablecell/">TableCell</a></li>
+<li><a href="../../classes/_renderer_api_components_.tablehead/">TableHead</a></li>
+<li><a href="../../classes/_renderer_api_components_.tablerow/">TableRow</a></li>
+<li><a href="../../classes/_renderer_api_components_.tabs/">Tabs</a></li>
+<li><a href="../../classes/_renderer_api_components_.tooltip/">Tooltip</a></li>
+<li><a href="../../classes/_renderer_api_components_.wizard/">Wizard</a></li>
+<li><a href="../../classes/_renderer_api_components_.wizardlayout/">WizardLayout</a></li>
+<li><a href="../../classes/_renderer_api_components_.wizardstep/">WizardStep</a></li>
+</ul>
+<h3 id="interfaces">Interfaces</h3>
+<ul>
+<li><a href="../../interfaces/_renderer_api_components_.badgeprops/">BadgeProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.buttonprops/">ButtonProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.checkboxprops/">CheckboxProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.confirmdialogbooleanparams/">ConfirmDialogBooleanParams</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.confirmdialogparams/">ConfirmDialogParams</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.confirmdialogprops/">ConfirmDialogProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.cubespinnerprops/">CubeSpinnerProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.dialogprops/">DialogProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.draweritemlabelsprops/">DrawerItemLabelsProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.draweritemprops/">DrawerItemProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.drawerparamtogglerprops/">DrawerParamTogglerProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.drawerprops/">DrawerProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.drawertitleprops/">DrawerTitleProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.groupselectoption/">GroupSelectOption</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.iconprops/">IconProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.inputvalidator/">InputValidator</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.kubeeventdetailsprops/">KubeEventDetailsProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.kubeobjectdetailsprops/">KubeObjectDetailsProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.kubeobjectlistlayoutprops/">KubeObjectListLayoutProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.kubeobjectmenuprops/">KubeObjectMenuProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.kubeobjectmetaprops/">KubeObjectMetaProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.lineprogressprops/">LineProgressProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.menuactionsprops/">MenuActionsProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.menuitemprops/">MenuItemProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.menuposition/">MenuPosition</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.menuprops/">MenuProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.notification/">Notification</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.pagelayoutprops/">PageLayoutProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.radiogroupprops/">RadioGroupProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.selectoption/">SelectOption</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.selectprops/">SelectProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.sliderprops/">SliderProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.spinnerprops/">SpinnerProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.statusbrickprops/">StatusBrickProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.stepperprops/">StepperProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tablayoutprops/">TabLayoutProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tablayoutroute/">TabLayoutRoute</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tabprops/">TabProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tablecellprops/">TableCellProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tableheadprops/">TableHeadProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tableprops/">TableProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tablerowprops/">TableRowProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tabsprops/">TabsProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tooltipcontentformatters/">TooltipContentFormatters</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tooltipdecoratorprops/">TooltipDecoratorProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.tooltipprops/">TooltipProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.wizardlayoutprops/">WizardLayoutProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.wizardprops/">WizardProps</a></li>
+<li><a href="../../interfaces/_renderer_api_components_.wizardstepprops/">WizardStepProps</a></li>
+</ul>
+<h3 id="type-aliases">Type aliases</h3>
+<ul>
+<li><a href="./#inputprops">InputProps</a></li>
+<li><a href="./#menucontextvalue">MenuContextValue</a></li>
+<li><a href="./#notificationid">NotificationId</a></li>
+<li><a href="./#notificationmessage">NotificationMessage</a></li>
+<li><a href="./#radioprops">RadioProps</a></li>
+<li><a href="./#tablecellelem">TableCellElem</a></li>
+<li><a href="./#tableheadelem">TableHeadElem</a></li>
+<li><a href="./#tableorderby">TableOrderBy</a></li>
+<li><a href="./#tablerowelem">TableRowElem</a></li>
+<li><a href="./#tablesortby">TableSortBy</a></li>
+<li><a href="./#tablesortcallback">TableSortCallback</a></li>
+<li><a href="./#tablesortcallbacks">TableSortCallbacks</a></li>
+<li><a href="./#tablesortparams">TableSortParams</a></li>
+</ul>
+<h3 id="variables">Variables</h3>
+<ul>
+<li><a href="./#inputvalidators">InputValidators</a></li>
+<li><a href="./#const-menucontext">MenuContext</a></li>
+<li><a href="./#const-switcher">Switcher</a></li>
+<li><a href="./#const-tablayout">TabLayout</a></li>
+<li><a href="./#const-kubedetailsurlparam">kubeDetailsUrlParam</a></li>
+<li><a href="./#const-kubeselectedurlparam">kubeSelectedUrlParam</a></li>
+<li><a href="./#const-logtabstore">logTabStore</a></li>
+<li><a href="./#const-notificationsstore">notificationsStore</a></li>
+<li><a href="./#const-orderbyurlparam">orderByUrlParam</a></li>
+<li><a href="./#const-sortbyurlparam">sortByUrlParam</a></li>
+<li><a href="./#const-terminalstore">terminalStore</a></li>
+</ul>
+<h3 id="functions">Functions</h3>
+<ul>
+<li><a href="./#draweritemlabels">DrawerItemLabels</a></li>
+<li><a href="./#formswitch">FormSwitch</a></li>
+<li><a href="./#submenu">SubMenu</a></li>
+<li><a href="./#createterminaltab">createTerminalTab</a></li>
+<li><a href="./#getdetailsurl">getDetailsUrl</a></li>
+<li><a href="./#hidedetails">hideDetails</a></li>
+<li><a href="./#showdetails">showDetails</a></li>
+<li><a href="./#withtooltip">withTooltip</a></li>
+</ul>
+<h3 id="object-literals">Object literals</h3>
+<ul>
+<li><a href="./#const-cpuoptions">cpuOptions</a></li>
+<li><a href="./#const-memoryoptions">memoryOptions</a></li>
+</ul>
+<h2 id="type-aliases_1">Type aliases</h2>
+<h3 id="inputprops">InputProps</h3>
+<p>Ƭ <strong>InputProps</strong>: <em>Omit‹InputElementProps, "onChange" | "onSubmit"› &amp; object</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/input/input.tsx#L43">src/renderer/components/input/input.tsx:43</a></em></p>
+<hr />
+<h3 id="menucontextvalue">MenuContextValue</h3>
+<p>Ƭ <strong>MenuContextValue</strong>: <em><a href="../../classes/_renderer_api_components_.menu/">Menu</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/menu/menu.tsx#L31">src/renderer/components/menu/menu.tsx:31</a></em></p>
+<hr />
+<h3 id="notificationid">NotificationId</h3>
+<p>Ƭ <strong>NotificationId</strong>: <em>string | number</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/notifications/notifications.store.tsx#L28">src/renderer/components/notifications/notifications.store.tsx:28</a></em></p>
+<hr />
+<h3 id="notificationmessage">NotificationMessage</h3>
+<p>Ƭ <strong>NotificationMessage</strong>: <em>React.ReactNode | React.ReactNode[] | JsonApiErrorParsed</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/notifications/notifications.store.tsx#L29">src/renderer/components/notifications/notifications.store.tsx:29</a></em></p>
+<hr />
+<h3 id="radioprops">RadioProps</h3>
+<p>Ƭ <strong>RadioProps</strong>: <em>HTMLProps‹any› &amp; object</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/radio/radio.tsx#L61">src/renderer/components/radio/radio.tsx:61</a></em></p>
+<hr />
+<h3 id="tablecellelem">TableCellElem</h3>
+<p>Ƭ <strong>TableCellElem</strong>: <em>ReactElement‹<a href="../../interfaces/_renderer_api_components_.tablecellprops/">TableCellProps</a>›</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/table/table-cell.tsx#L30">src/renderer/components/table/table-cell.tsx:30</a></em></p>
+<hr />
+<h3 id="tableheadelem">TableHeadElem</h3>
+<p>Ƭ <strong>TableHeadElem</strong>: <em>ReactElement‹<a href="../../interfaces/_renderer_api_components_.tableheadprops/">TableHeadProps</a>›</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/table/table-head.tsx#L27">src/renderer/components/table/table-head.tsx:27</a></em></p>
+<hr />
+<h3 id="tableorderby">TableOrderBy</h3>
+<p>Ƭ <strong>TableOrderBy</strong>: <em>"asc" | "desc" | string</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/table/table.tsx#L38">src/renderer/components/table/table.tsx:38</a></em></p>
+<hr />
+<h3 id="tablerowelem">TableRowElem</h3>
+<p>Ƭ <strong>TableRowElem</strong>: <em>ReactElement‹<a href="../../interfaces/_renderer_api_components_.tablerowprops/">TableRowProps</a>›</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/table/table-row.tsx#L28">src/renderer/components/table/table-row.tsx:28</a></em></p>
+<hr />
+<h3 id="tablesortby">TableSortBy</h3>
+<p>Ƭ <strong>TableSortBy</strong>: <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/table/table.tsx#L37">src/renderer/components/table/table.tsx:37</a></em></p>
+<hr />
+<h3 id="tablesortcallback">TableSortCallback</h3>
+<p>Ƭ <strong>TableSortCallback</strong>: <em>function</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/table/table.tsx#L40">src/renderer/components/table/table.tsx:40</a></em></p>
+<h4 id="type-declaration">Type declaration:</h4>
+<p>▸ (<code>data</code>: D): <em>string | number | (string | number)[]</em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>D</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="tablesortcallbacks">TableSortCallbacks</h3>
+<p>Ƭ <strong>TableSortCallbacks</strong>: <em>object</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/table/table.tsx#L41">src/renderer/components/table/table.tsx:41</a></em></p>
+<h4 id="type-declaration_1">Type declaration:</h4>
+<ul>
+<li>[ <strong>columnId</strong>: <em>string</em>]: <a href="./#tablesortcallback">TableSortCallback</a></li>
+</ul>
+<hr />
+<h3 id="tablesortparams">TableSortParams</h3>
+<p>Ƭ <strong>TableSortParams</strong>: <em>object</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/table/table.tsx#L39">src/renderer/components/table/table.tsx:39</a></em></p>
+<h4 id="type-declaration_2">Type declaration:</h4>
+<ul>
+<li>
+<p><strong>orderBy</strong>: <em><a href="./#tableorderby">TableOrderBy</a></em></p>
+</li>
+<li>
+<p><strong>sortBy</strong>: <em><a href="./#tablesortby">TableSortBy</a></em></p>
+</li>
+</ul>
+<h2 id="variables_1">Variables</h2>
+<h3 id="inputvalidators">InputValidators</h3>
+<p>• <strong>InputValidators</strong>: <em><a href="./#inputvalidators">InputValidators</a></em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/input/input.tsx#L35">src/renderer/components/input/input.tsx:35</a></em></p>
+<hr />
+<h3 id="const-menucontext"><code>Const</code> MenuContext</h3>
+<p>• <strong>MenuContext</strong>: <em>Context‹<a href="../../classes/_renderer_api_components_.menu/">Menu</a>‹››</em> = React.createContext<MenuContextValue>(null)</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/menu/menu.tsx#L30">src/renderer/components/menu/menu.tsx:30</a></em></p>
+<hr />
+<h3 id="const-switcher"><code>Const</code> Switcher</h3>
+<p>• <strong>Switcher</strong>: <em>ComponentClass‹object &amp; StyledComponentProps‹"track" | "root" | "thumb" | "focusVisible" | "switchBase" | "checked"›, any› | FunctionComponent‹object &amp; StyledComponentProps‹"track" | "root" | "thumb" | "focusVisible" | "switchBase" | "checked"››</em> = withStyles((theme: Theme) =&gt;
+  createStyles({
+    root: {
+      width: 40,
+      height: 24,
+      padding: 0,
+      margin: "0 0 0 8px",
+    },
+    switchBase: {
+      padding: 1,
+      paddingLeft: 4,
+      "&amp;$checked": {
+        transform: "translateX(14px)",
+        color: "white",
+        "&amp; + $track": {
+          backgroundColor: "#52d869",
+          opacity: 1,
+          border: "none",
+        },
+      },
+      "&amp;$focusVisible $thumb": {
+        color: "#52d869",
+        border: "6px solid #fff",
+      },
+    },
+    thumb: {
+      width: 18,
+      height: 18,
+      marginTop: 2,
+      boxShadow: "none"
+    },
+    track: {
+      borderRadius: 26 / 2,
+      backgroundColor: "#72767b",
+      opacity: 1,
+      transition: theme.transitions.create(["background-color", "border"]),
+    },
+    checked: {},
+    focusVisible: {},
+  }),
+)(({ classes, ...props }: Props) =&gt; {
+  return (
+    <Switch
+      focusVisibleClassName={classes.focusVisible}
+      disableRipple
+      classes={{
+        root: classes.root,
+        switchBase: classes.switchBase,
+        thumb: classes.thumb,
+        track: classes.track,
+        checked: classes.checked,
+      }}
+      {...props}
+    />
+  );
+})</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/switch/switcher.tsx#L34">src/renderer/components/switch/switcher.tsx:34</a></em></p>
+<hr />
+<h3 id="const-tablayout"><code>Const</code> TabLayout</h3>
+<p>• <strong>TabLayout</strong>: <em>(Anonymous function)</em> = observer(({ className, contentClass, tabs = [], children }: TabLayoutProps) =&gt; {
+  const currentLocation = navigation.location.pathname;
+  const hasTabs = tabs.length &gt; 0;
+  const startTabUrl = hasTabs ? (tabs.find(tab =&gt; tab.default) || tabs[0])?.url : null;</p>
+<p>return (
+    <div className={cssNames("TabLayout", className)}>
+      {hasTabs &amp;&amp; (
+        <Tabs center onChange={(url) => navigate(url)}&gt;
+          {tabs.map(({ title, routePath, url = routePath, exact }) =&gt; {
+            const isActive = !!matchPath(currentLocation, { path: routePath, exact });</p>
+<pre><code>        return &lt;Tab key={url} label={title} value={url} active={isActive}/&gt;;
+      })}
+    &lt;/Tabs&gt;
+  )}
+  &lt;main className={cssNames(contentClass)}&gt;
+    &lt;ErrorBoundary&gt;
+      {hasTabs &amp;&amp; (
+        &lt;Switch&gt;
+          {tabs.map(({ routePath, exact, component }) =&gt; {
+            return &lt;Route key={routePath} exact={exact} path={routePath} component={component}/&gt;;
+          })}
+          &lt;Redirect to={startTabUrl}/&gt;
+        &lt;/Switch&gt;
+      )}
+      {children}
+    &lt;/ErrorBoundary&gt;
+  &lt;/main&gt;
+&lt;/div&gt;
+</code></pre>
+<p>);
+})</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/layout/tab-layout.tsx#L48">src/renderer/components/layout/tab-layout.tsx:48</a></em></p>
+<hr />
+<h3 id="const-kubedetailsurlparam"><code>Const</code> kubeDetailsUrlParam</h3>
+<p>• <strong>kubeDetailsUrlParam</strong>: <em><a href="../../classes/_renderer_api_navigation_.pageparam/">PageParam</a>‹string›</em> = createPageParam({
+  name: "kube-details",
+  isSystem: true,
+})</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/kube-object/kube-object-details.tsx#L40">src/renderer/components/kube-object/kube-object-details.tsx:40</a></em></p>
+<p>Used to store <code>object.selfLink</code> to show more info about resource in the details panel.</p>
+<hr />
+<h3 id="const-kubeselectedurlparam"><code>Const</code> kubeSelectedUrlParam</h3>
+<p>• <strong>kubeSelectedUrlParam</strong>: <em><a href="../../classes/_renderer_api_navigation_.pageparam/">PageParam</a>‹string›</em> = createPageParam({
+  name: "kube-selected",
+  isSystem: true,
+  get defaultValue() {
+    return kubeDetailsUrlParam.get();
+  }
+})</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/kube-object/kube-object-details.tsx#L52">src/renderer/components/kube-object/kube-object-details.tsx:52</a></em></p>
+<p>Used to highlight last active/selected table row with the resource.</p>
+<p><strong><code>example</code></strong> 
+If we go to "Nodes (page) -&gt; Node (details) -&gt; Pod (details)",
+last clicked Node should be "active" while Pod details are shown).</p>
+<hr />
+<h3 id="const-logtabstore"><code>Const</code> logTabStore</h3>
+<p>• <strong>logTabStore</strong>: <em>LogTabStore‹›</em> = new LogTabStore()</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/dock/log-tab.store.ts#L140">src/renderer/components/dock/log-tab.store.ts:140</a></em></p>
+<hr />
+<h3 id="const-notificationsstore"><code>Const</code> notificationsStore</h3>
+<p>• <strong>notificationsStore</strong>: <em><a href="../../classes/_renderer_api_components_.notificationsstore/">NotificationsStore</a>‹›</em> = new NotificationsStore()</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/notifications/notifications.store.tsx#L99">src/renderer/components/notifications/notifications.store.tsx:99</a></em></p>
+<hr />
+<h3 id="const-orderbyurlparam"><code>Const</code> orderByUrlParam</h3>
+<p>• <strong>orderByUrlParam</strong>: <em><a href="../../classes/_renderer_api_navigation_.pageparam/">PageParam</a>‹string›</em> = createPageParam({
+  name: "order",
+  isSystem: true,
+})</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/table/table.tsx#L73">src/renderer/components/table/table.tsx:73</a></em></p>
+<hr />
+<h3 id="const-sortbyurlparam"><code>Const</code> sortByUrlParam</h3>
+<p>• <strong>sortByUrlParam</strong>: <em><a href="../../classes/_renderer_api_navigation_.pageparam/">PageParam</a>‹string›</em> = createPageParam({
+  name: "sort",
+  isSystem: true,
+})</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/table/table.tsx#L68">src/renderer/components/table/table.tsx:68</a></em></p>
+<hr />
+<h3 id="const-terminalstore"><code>Const</code> terminalStore</h3>
+<p>• <strong>terminalStore</strong>: <em>TerminalStore‹›</em> = new TerminalStore()</p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/dock/terminal.store.ts#L131">src/renderer/components/dock/terminal.store.ts:131</a></em></p>
+<h2 id="functions_1">Functions</h2>
+<h3 id="draweritemlabels">DrawerItemLabels</h3>
+<p>▸ <strong>DrawerItemLabels</strong>(<code>props</code>: <a href="../../interfaces/_renderer_api_components_.draweritemlabelsprops/">DrawerItemLabelsProps</a>): <em>Element‹›</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/drawer/drawer-item-labels.tsx#L30">src/renderer/components/drawer/drawer-item-labels.tsx:30</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>props</code></td>
+<td><a href="../../interfaces/_renderer_api_components_.draweritemlabelsprops/">DrawerItemLabelsProps</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Element‹›</em></p>
+<hr />
+<h3 id="formswitch">FormSwitch</h3>
+<p>▸ <strong>FormSwitch</strong>(<code>props</code>: FormControlLabelProps): <em>Element‹›</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/switch/form-switcher.tsx#L38">src/renderer/components/switch/form-switcher.tsx:38</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>props</code></td>
+<td>FormControlLabelProps</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Element‹›</em></p>
+<hr />
+<h3 id="submenu">SubMenu</h3>
+<p>▸ <strong>SubMenu</strong>(<code>props</code>: Partial‹<a href="../../interfaces/_renderer_api_components_.menuprops/">MenuProps</a>›): <em>Element‹›</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/menu/menu.tsx#L316">src/renderer/components/menu/menu.tsx:316</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>props</code></td>
+<td>Partial‹<a href="../../interfaces/_renderer_api_components_.menuprops/">MenuProps</a>›</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>Element‹›</em></p>
+<hr />
+<h3 id="createterminaltab">createTerminalTab</h3>
+<p>▸ <strong>createTerminalTab</strong>(<code>tabParams</code>: Partial‹ITerminalTab›): <em>IDockTab</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/dock/terminal.store.ts#L33">src/renderer/components/dock/terminal.store.ts:33</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tabParams</code></td>
+<td>Partial‹ITerminalTab›</td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>IDockTab</em></p>
+<hr />
+<h3 id="getdetailsurl">getDetailsUrl</h3>
+<p>▸ <strong>getDetailsUrl</strong>(<code>selfLink</code>: string, <code>resetSelected</code>: boolean, <code>mergeGlobals</code>: boolean): <em>string</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/kube-object/kube-object-details.tsx#L70">src/renderer/components/kube-object/kube-object-details.tsx:70</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>selfLink</code></td>
+<td>string</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>resetSelected</code></td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>mergeGlobals</code></td>
+<td>boolean</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>string</em></p>
+<hr />
+<h3 id="hidedetails">hideDetails</h3>
+<p>▸ <strong>hideDetails</strong>(): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/kube-object/kube-object-details.tsx#L66">src/renderer/components/kube-object/kube-object-details.tsx:66</a></em></p>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="showdetails">showDetails</h3>
+<p>▸ <strong>showDetails</strong>(<code>selfLink</code>: string, <code>resetSelected</code>: boolean): <em>void</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/kube-object/kube-object-details.tsx#L60">src/renderer/components/kube-object/kube-object-details.tsx:60</a></em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>selfLink</code></td>
+<td>string</td>
+<td>""</td>
+</tr>
+<tr>
+<td><code>resetSelected</code></td>
+<td>boolean</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>void</em></p>
+<hr />
+<h3 id="withtooltip">withTooltip</h3>
+<p>▸ <strong>withTooltip</strong>‹<strong>T</strong>›(<code>Target</code>: T): <em>T</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/tooltip/withTooltip.tsx#L39">src/renderer/components/tooltip/withTooltip.tsx:39</a></em></p>
+<p><strong>Type parameters:</strong></p>
+<p>▪ <strong>T</strong>: <em>React.ComponentType‹any›</em></p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Target</code></td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> <em>T</em></p>
+<h2 id="object-literals_1">Object literals</h2>
+<h3 id="const-cpuoptions"><code>Const</code> cpuOptions</h3>
+<h3 id="cpuoptions-object">▪ <strong>cpuOptions</strong>: <em>object</em></h3>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/chart/bar-chart.tsx#L220">src/renderer/components/chart/bar-chart.tsx:220</a></em></p>
+<p>▪ <strong>scales</strong>: <em>object</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/chart/bar-chart.tsx#L221">src/renderer/components/chart/bar-chart.tsx:221</a></em></p>
+<ul>
+<li><strong>yAxes</strong>: <em>object[]</em> = [{
+      ticks: {
+        callback: (value: number | string): string =&gt; {
+          const float = parseFloat(<code>${value}</code>);<pre><code>  if (float == 0) return "0";
+  if (float &lt; 10) return float.toFixed(3);
+  if (float &lt; 100) return float.toFixed(2);
+
+  return float.toFixed(1);
+}
+</code></pre>
+<p>}
+}]</p>
+</li>
+</ul>
+<p>▪ <strong>tooltips</strong>: <em>object</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/chart/bar-chart.tsx#L236">src/renderer/components/chart/bar-chart.tsx:236</a></em></p>
+<ul>
+<li>
+<p><strong>callbacks</strong>: <em>object</em></p>
+</li>
+<li>
+<p><strong>label</strong>(<code>__namedParameters</code>: object, <code>__namedParameters</code>: object): <em>string</em></p>
+</li>
+</ul>
+<hr />
+<h3 id="const-memoryoptions"><code>Const</code> memoryOptions</h3>
+<h3 id="memoryoptions-object">▪ <strong>memoryOptions</strong>: <em>object</em></h3>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/chart/bar-chart.tsx#L186">src/renderer/components/chart/bar-chart.tsx:186</a></em></p>
+<p>▪ <strong>scales</strong>: <em>object</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/chart/bar-chart.tsx#L187">src/renderer/components/chart/bar-chart.tsx:187</a></em></p>
+<ul>
+<li><strong>yAxes</strong>: <em>object[]</em> = [{
+      ticks: {
+        callback: (value: number | string): string =&gt; {
+          if (typeof value == "string") {
+            const float = parseFloat(value);<pre><code>    if (float &lt; 1) {
+      return float.toFixed(3);
+    }
+
+    return bytesToUnits(parseInt(value));
+  }
+
+  return bytesToUnits(value);
+},
+stepSize: 1
+</code></pre>
+<p>}
+}]</p>
+</li>
+</ul>
+<p>▪ <strong>tooltips</strong>: <em>object</em></p>
+<p><em>Defined in <a href="https://github.com/stevejr/lens/blob/5372e361/src/renderer/components/chart/bar-chart.tsx#L207">src/renderer/components/chart/bar-chart.tsx:207</a></em></p>
+<ul>
+<li>
+<p><strong>callbacks</strong>: <em>object</em></p>
+</li>
+<li>
+<p><strong>label</strong>(<code>__namedParameters</code>: object, <code>__namedParameters</code>: object): <em>string</em></p>
+</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 <a href="https://mirantis.com/">stevehr</a> - All rights reserved.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1199 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Steves Amazing Docs">
+      
+      
+      
+      
+        <link rel="canonical" href="https://stevejr.com/extensions/guides/kube-object-list-layout/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>KubeObjectListLayout Sample - Steves Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kubeobjectlistlayout-sample" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Steves Docs" class="md-header__button md-logo" aria-label="Steves Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Steves Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              KubeObjectListLayout Sample
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/stevejr/test2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Steves Docs" class="md-nav__button md-logo" aria-label="Steves Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Steves Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/stevejr/test2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Managing Clusters
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Managing Clusters" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Managing Clusters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../clusters/adding-clusters/" class="md-nav__link">
+        Adding Clusters
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../clusters/removing-clusters/" class="md-nav__link">
+        Removing Clusters
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../clusters/settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../helm/" class="md-nav__link">
+        Using Helm Charts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        Using Extensions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/preferences/" class="md-nav__link">
+        Preferences
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Extension Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extension Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Extension Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      <label class="md-nav__link" for="__nav_7_2">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/your-first-extension/" class="md-nav__link">
+        Your First Extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/anatomy/" class="md-nav__link">
+        Extension Anatomy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/wrapping-up/" class="md-nav__link">
+        Wrapping Up
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      <label class="md-nav__link" for="__nav_7_3">
+        Extension Capabilities
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extension Capabilities" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extension Capabilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../capabilities/common-capabilities/" class="md-nav__link">
+        Common Capabilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../capabilities/styling/" class="md-nav__link">
+        Styling
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+      
+      <label class="md-nav__link" for="__nav_7_4">
+        Extension Guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extension Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Extension Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generator/" class="md-nav__link">
+        Generator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main-extension/" class="md-nav__link">
+        Main Extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../renderer-extension/" class="md-nav__link">
+        Renderer Extension
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stores/" class="md-nav__link">
+        Stores
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-with-mobx/" class="md-nav__link">
+        Working with MobX
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protocol-handlers/" class="md-nav__link">
+        Protocol Handlers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
+      
+      <label class="md-nav__link" for="__nav_7_5">
+        Testing and Publishing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Testing and Publishing" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Testing and Publishing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testing-and-publishing/testing/" class="md-nav__link">
+        Testing Extensions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testing-and-publishing/publishing/" class="md-nav__link">
+        Publishing Extensions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Contributing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/development/" class="md-nav__link">
+        Development
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/documentation/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/maintainers/" class="md-nav__link">
+        Maintainers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/promotion/" class="md-nav__link">
+        Promotion
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        API Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/lens/extensions/" class="md-nav__link">
+        Lens IDE Extensions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#register-clusterpage-and-clusterpagemenu-objects" class="md-nav__link">
+    Register clusterPage and clusterPageMenu Objects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-certificate-objects-on-the-cluster-page" class="md-nav__link">
+    List Certificate Objects on the Cluster Page
+  </a>
+  
+    <nav class="md-nav" aria-label="List Certificate Objects on the Cluster Page">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-crd-objects" class="md-nav__link">
+    Get CRD objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-certificatepage-component" class="md-nav__link">
+    Create CertificatePage component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customize-details-panel" class="md-nav__link">
+    Customize Details panel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="kubeobjectlistlayout-sample">KubeObjectListLayout Sample</h1>
+<p>In this guide we will learn how to list Kubernetes CRD objects on the cluster dashboard.
+You can see the complete source code for this guide <a href="https://github.com/lensapp/lens-extension-samples/tree/master/custom-resource-page">here</a>.</p>
+<p><img alt="" src="../images/certificates-crd-list.png" /></p>
+<p>Next, we will go the implementation through in steps.
+To achieve our goal, we need to:</p>
+<ol>
+<li><a href="#register-objects-for-clustepages-and-clusterpagemenus">Register ClusterPage and ClusterPageMenu objects</a></li>
+<li><a href="#list-certificate-objects-on-the-cluster-page">List Certificate Objects on the Cluster Page</a></li>
+<li><a href="#customize-details-panel">Customize Details Panel</a></li>
+</ol>
+<h2 id="register-clusterpage-and-clusterpagemenu-objects">Register <code>clusterPage</code> and <code>clusterPageMenu</code> Objects</h2>
+<p>First thing we need to do with our extension is to register new menu item in the cluster menu and create a cluster page that is opened when clicking the menu item.
+We will do this in our extension class <code>CrdSampleExtension</code> that is derived <code>LensRendererExtension</code> class:</p>
+<pre><code class="language-typescript">export default class CrdSampleExtension extends LensRendererExtension {
+}
+</code></pre>
+<p>To register menu item in the cluster menu we need to register <code>PageMenuRegistration</code> object.
+This object will register a menu item with "Certificates" text.
+It will also use <code>CertificateIcon</code> component to render an icon and navigate to cluster page that is having <code>certificates</code> page id.</p>
+<pre><code class="language-typescript">export function CertificateIcon(props: Component.IconProps) {
+  return &lt;Component.Icon {...props} material=&quot;security&quot; tooltip=&quot;Certificates&quot;/&gt;
+}
+
+export default class CrdSampleExtension extends LensRendererExtension {
+
+  clusterPageMenus = [
+    {
+      target: { pageId: &quot;certificates&quot; },
+      title: &quot;Certificates&quot;,
+      components: {
+        Icon: CertificateIcon,
+      }
+    },
+  ]
+}
+</code></pre>
+<p>Then we need to register <code>PageRegistration</code> object with <code>certificates</code> id and define <code>CertificatePage</code> component to render certificates.</p>
+<pre><code class="language-typescript">export default class CrdSampleExtension extends LensRendererExtension {
+  ...
+
+  clusterPages = [{
+    id: &quot;certificates&quot;,
+    components: {
+      Page: () =&gt; &lt;CertificatePage extension={this} /&gt;,
+      MenuIcon: CertificateIcon,
+    }
+  }]
+}
+</code></pre>
+<h2 id="list-certificate-objects-on-the-cluster-page">List Certificate Objects on the Cluster Page</h2>
+<p>In the previous step we defined <code>CertificatePage</code> component to render certificates.
+In this step we will actually implement that.
+<code>CertificatePage</code> is a React component that will render <code>Component.KubeObjectListLayout</code> component to list <code>Certificate</code> CRD objects.</p>
+<h3 id="get-crd-objects">Get CRD objects</h3>
+<p>In order to list CRD objects, we need first fetch those from Kubernetes API.
+Lens Extensions API provides easy mechanism to do this.
+We just need to define <code>Certificate</code> class derived from <code>K8sApi.KubeObject</code>, <code>CertificatesApi</code>derived from <code>K8sApi.KubeApi</code> and <code>CertificatesStore</code> derived from <code>K8sApi.KubeObjectStore</code>.</p>
+<p><code>Certificate</code> class defines properties found in the CRD object:</p>
+<pre><code class="language-typescript">export class Certificate extends K8sApi.KubeObject {
+  static kind = &quot;Certificate&quot;
+  static namespaced = true
+  static apiBase = &quot;/apis/cert-manager.io/v1alpha2/certificates&quot;
+
+  kind: string
+  apiVersion: string
+  metadata: {
+    name: string;
+    namespace: string;
+    selfLink: string;
+    uid: string;
+    resourceVersion: string;
+    creationTimestamp: string;
+    labels: {
+      [key: string]: string;
+    };
+    annotations: {
+      [key: string]: string;
+    };
+  }
+  spec: {
+    dnsNames: string[];
+    issuerRef: {
+      group: string;
+      kind: string;
+      name: string;
+    }
+    secretName: string
+  }
+  status: {
+    conditions: {
+      lastTransitionTime: string;
+      message: string;
+      reason: string;
+      status: string;
+      type?: string;
+    }[];
+  }
+}
+</code></pre>
+<p>With <code>CertificatesApi</code> class we are able to manage <code>Certificate</code> objects in Kubernetes API:</p>
+<pre><code class="language-typescript">export class CertificatesApi extends K8sApi.KubeApi&lt;Certificate&gt; {
+}
+export const certificatesApi = new CertificatesApi({
+  objectConstructor: Certificate
+});
+</code></pre>
+<p><code>CertificateStore</code> defines storage for <code>Certificate</code> objects</p>
+<pre><code class="language-typescript">export class CertificatesStore extends K8sApi.KubeObjectStore&lt;Certificate&gt; {
+  api = certificatesApi
+}
+
+export const certificatesStore = new CertificatesStore();
+</code></pre>
+<p>And, finally, we register this store to Lens's API manager.</p>
+<pre><code class="language-typescript">K8sApi.apiManager.registerStore(certificatesStore);
+</code></pre>
+<h3 id="create-certificatepage-component">Create CertificatePage component</h3>
+<p>Now we have created mechanism to manage <code>Certificate</code> objects in Kubernetes API.
+Then we need to fetch those and render them in the UI.</p>
+<p>First we define <code>CertificatePage</code> class that extends <code>React.Component</code>.</p>
+<pre><code class="language-typescript">import { Component, LensRendererExtension } from &quot;@k8slens/extensions&quot;;
+import React from &quot;react&quot;;
+import { certificatesStore } from &quot;../certificate-store&quot;;
+import { Certificate } from &quot;../certificate&quot;
+
+export class CertificatePage extends React.Component&lt;{ extension: LensRendererExtension }&gt; {
+
+}
+</code></pre>
+<p>Next we will implement <code>render</code> method that will display certificates in a list.
+To do that, we just need to add <code>Component.KubeObjectListLayout</code> component inside <code>Component.TabLayout</code> component in render method.
+To define which objects the list is showing, we need to pass <code>certificateStore</code> object to <code>Component.KubeObjectListLayout</code> in <code>store</code> property.
+<code>Component.KubeObjectListLayout</code> will fetch automatically items from the given store when component is mounted.
+Also, we can define needed sorting callbacks and search filters for the list:</p>
+<pre><code class="language-typescript">enum sortBy {
+  name = &quot;name&quot;,
+  namespace = &quot;namespace&quot;,
+  issuer = &quot;issuer&quot;
+}
+
+export class CertificatePage extends React.Component&lt;{ extension: LensRendererExtension }&gt; {
+  // ...
+
+  render() {
+    return (
+      &lt;Component.TabLayout&gt;
+        &lt;Component.KubeObjectListLayout
+          className=&quot;Certicates&quot; store={certificatesStore}
+          sortingCallbacks={{
+            [sortBy.name]: (certificate: Certificate) =&gt; certificate.getName(),
+            [sortBy.namespace]: (certificate: Certificate) =&gt; certificate.metadata.namespace,
+            [sortBy.issuer]: (certificate: Certificate) =&gt; certificate.spec.issuerRef.name
+          }}
+          searchFilters={[
+            (certificate: Certificate) =&gt; certificate.getSearchFields()
+          ]}
+          renderHeaderTitle=&quot;Certificates&quot;
+          renderTableHeader={[
+            { title: &quot;Name&quot;, className: &quot;name&quot;, sortBy: sortBy.name },
+            { title: &quot;Namespace&quot;, className: &quot;namespace&quot;, sortBy: sortBy.namespace },
+            { title: &quot;Issuer&quot;, className: &quot;issuer&quot;, sortBy: sortBy.namespace },
+          ]}
+          renderTableContents={(certificate: Certificate) =&gt; [
+            certificate.getName(),
+            certificate.metadata.namespace,
+            certificate.spec.issuerRef.name
+          ]}
+        /&gt;
+      &lt;/Component.TabLayout&gt;
+    )
+  }
+}
+</code></pre>
+<h3 id="customize-details-panel">Customize Details panel</h3>
+<p>We have learned now, how to list CRD objects in a list view.
+Next, we will learn how to customize details panel that will be opened when the object is clicked in the list.</p>
+<p>First, we need to register our custom component to render details for the specific Kubernetes custom resource, in our case <code>Certificate</code>.
+We will do this again in <code>CrdSampleExtension</code> class:</p>
+<pre><code class="language-typescript">export default class CrdSampleExtension extends LensRendererExtension {
+  //...
+
+  kubeObjectDetailItems = [{
+    kind: Certificate.kind,
+    apiVersions: [&quot;cert-manager.io/v1alpha2&quot;],
+    components: {
+      Details: (props: CertificateDetailsProps) =&gt; &lt;CertificateDetails {...props} /&gt;
+    }
+  }]
+}
+</code></pre>
+<p>Here we defined that <code>CertificateDetails</code> component will render the resource details.
+So, next we need to implement that component.
+Lens will inject <code>Certificate</code> object into our component so we just need to render some information out of it.
+We can use <code>Component.DrawerItem</code> component from Lens Extensions API to give the same look and feel as Lens is using elsewhere:</p>
+<pre><code class="language-typescript">import { Component, K8sApi } from &quot;@k8slens/extensions&quot;;
+import React from &quot;react&quot;;
+import { Certificate } from &quot;../certificate&quot;;
+
+export interface CertificateDetailsProps extends Component.KubeObjectDetailsProps&lt;Certificate&gt;{
+}
+
+export class CertificateDetails extends React.Component&lt;CertificateDetailsProps&gt; {
+
+  render() {
+    const { object: certificate } = this.props;
+    if (!certificate) return null;
+    return (
+      &lt;div className=&quot;Certificate&quot;&gt;
+        &lt;Component.DrawerItem name=&quot;Created&quot;&gt;
+          {certificate.getAge(true, false)} ago ({certificate.metadata.creationTimestamp })
+        &lt;/Component.DrawerItem&gt;
+        &lt;Component.DrawerItem name=&quot;DNS Names&quot;&gt;
+          {certificate.spec.dnsNames.join(&quot;,&quot;)}
+        &lt;/Component.DrawerItem&gt;
+        &lt;Component.DrawerItem name=&quot;Secret&quot;&gt;
+          {certificate.spec.secretName}
+        &lt;/Component.DrawerItem&gt;
+        &lt;Component.DrawerItem name=&quot;Status&quot; className=&quot;status&quot; labelsOnly&gt;
+          {certificate.status.conditions.map((condition, index) =&gt; {
+            const { type, reason, message, status } = condition;
+            const kind = type || reason;
+            if (!kind) return null;
+            return (
+              &lt;Component.Badge
+                key={kind + index} label={kind}
+                className={&quot;success &quot;+kind.toLowerCase()}
+                tooltip={message}
+              /&gt;
+            );
+          })}
+        &lt;/Component.DrawerItem&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+</code></pre>
+<h2 id="summary">Summary</h2>
+<p>Like we can see above, it's very easy to add custom pages and fetch Kubernetes resources by using Extensions API.
+Please see the <a href="https://github.com/lensapp/lens-extension-samples/tree/master/custom-resource-page">complete source code</a> to test it out.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 <a href="https://mirantis.com/">stevehr</a> - All rights reserved.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>
