@@ -42,8 +42,8 @@ jobs:
             case $dir in
               *staging* | *production* ) 
                 echo "Found environment related dir: $dir"
-                found_dir=`echo $dir | cut -d "/" -f3,4`;;
-                echo "found_dir: $found_dir"
+                found_dir=`echo $dir | cut -d "/" -f3,4`
+                echo "found_dir: $found_dir";;
               *modules* ) 
                 echo "Found a module related dir: $dir"
                 continue;;
