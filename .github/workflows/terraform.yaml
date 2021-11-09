@@ -72,15 +72,83 @@ jobs:
           tf_config="{\"include\":[$tf_config]}"
           echo "::set-output name=matrix::$tf_config"
   
-  job2:
+  validate_terraform:
     needs: [changed_files]
     runs-on: ubuntu-latest
     strategy:
       matrix: ${{fromJson(needs.changed_files.outputs.matrix)}}
     steps:
+#       - name: Set global environment variables
+#         run: |
+#           AWS_ACCESS_KEY_ID=${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+#           AWS_SECRET_ACCESS_KEY=${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
+
+#           if [[ ${{ matrix.tf_config }} == *"production_devclusters"* ]]; then
+#             AWS_ACCESS_KEY_ID=${{ secrets.PRODUCTION_DEVCLUSTERS_AWS_ACCESS_KEY_ID }}
+#             AWS_SECRET_ACCESS_KEY=${{ secrets.PRODUCTION_DEVCLUSTERS_AWS_SECRET_ACCESS_KEY }}
+#           fi
+
+#           if [[ ${{ matrix.tf_config }} == *"production"* ]]; then
+#             AWS_ACCESS_KEY_ID=${{ secrets.PRODUCTION_AWS_ACCESS_KEY_ID }}
+#             AWS_SECRET_ACCESS_KEY=${{ secrets.PRODUCTION_AWS_SECRET_ACCESS_KEY }}
+#           fi
+
+#           echo "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> $GITHUB_ENV
+#           echo "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Validate environments
-        run: |
-          cd ./terraform/environments/${{ matrix.tf_config }}
-          ls -ltra
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          # Wrapper breaks terraform json output
+          terraform_wrapper: false
+      - name: Terraform format
+        id: fmt
+        run: terraform fmt -check
+        working-directory: ./terraform/environments/${{ matrix.tf_config }}
+      - name: Terraform Init
+        id: init
+        run: terraform init
+        working-directory: ./terraform/environments/${{ matrix.tf_config }}
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+        working-directory: ./terraform/environments/${{ matrix.tf_config }}
+      - name: Terraform Init
+        id: plan
+        if: github.event_name == 'pull_request'
+        run: terraform plan -no-color
+        working-directory: ./terraform/environments/${{ matrix.tf_config }}
+        continue-on-error: true
+      - name: Update Pull Request
+        uses: actions/github-script@0.9.0
+        if: github.event_name == 'pull_request'
+        env:
+          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
+            #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
+            #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+            #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
+
+            <details><summary>Show Plan</summary>
+
+            \`\`\`\n
+            ${process.env.PLAN}
+            \`\`\`
+
+            </details>
+
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
+      - name: Terraform Plan Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
