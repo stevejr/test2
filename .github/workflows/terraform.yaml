@@ -40,15 +40,9 @@ jobs:
             echo "Processing dir: $dir"
             
             case $dir in
-              *staging* ) 
+              *staging* | *production* ) 
                 echo "Found environment related dir: $dir"
-                found_dir="staging";;
-              *production-devclusters* ) 
-                echo "Found environment related dir: $dir"
-                found_dir="production-devclusters";;
-              *production* ) 
-                echo "Found environment related dir: $dir"
-                found_dir="production";;
+                found_dir=`echo $dir | cut -d "/" -f4 -f5`;;
               *modules* ) 
                 echo "Found a module related dir: $dir"
                 continue;;
