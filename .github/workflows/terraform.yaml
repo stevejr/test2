@@ -78,5 +78,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Validate environments
         run: |
-          cd ./terraform/${{ matrix.tf_config }}
+          cd ./terraform/environments/${{ matrix.tf_config }}
           ls -ltra
