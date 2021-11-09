@@ -1,0 +1,82 @@
+name: terraform
+
+on:
+  pull_request:
+    paths:
+    - 'terraform/**'
+  push:
+    branches:
+      - 'main'
+    paths:
+    - 'terraform/**'
+
+jobs:
+  changed_files:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: get parent directory and set matrix
+        id: set-matrix
+        run: |
+          # Declare an array of available environments
+          declare -a availableEnvs=("staging/global" "staging/lc-staging1" "production/global" "production/eu-bored1" "production/lc-catalog1" "production/lc-production1" "production/us-bored1" "production-devclusters/global" "production-devclusters/eu-devcluster1")
+
+          git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' > directories.txt
+          tf_config=''
+
+          while IFS= read -r dir
+          do
+            case $dir in
+              .*staging* ) 
+                echo "Found environment related dir: $dir"
+                found_dir="staging";;
+              .*production-devclusters* ) 
+                echo "Found environment related dir: $dir"
+                found_dir="production-devclusters";;
+              .*production* ) 
+                echo "Found environment related dir: $dir"
+                found_dir="production";;
+              *modules* ) 
+                echo "Found a module related dir: $dir"
+                continue;;
+            esac
+
+            if [[ -z $tf_config ]]; then
+              tf_config="{\"tf_config\":\"$found_dir\"}"
+            else
+              tf_config="$tf_config, {\"tf_config\":\"$found_dir\"}"
+            fi
+          done < directories.txt
+
+          if [[ -z $tf_config ]]; then # Only modules changed then we should plan everything
+            # Iterate the environments array using for loop
+            empty=1
+            for val in ${availableEnvs[@]}; do
+              if [[ $empty == "1" ]]; then
+                tf_config="{\"tf_config\":\"$val\"}"
+                empty=0
+              else 
+                tf_config="$tf_config, {\"tf_config\":\"$val\"}"
+              fi
+            done
+          fi
+
+          tf_config="{\"include\":[$tf_config]}"
+          echo "::set-output name=matrix::$tf_config"
+  
+  job2:
+    needs: [changed_files]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.changed_files.outputs.matrix)}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Validate environments
+        run: |
+          cd ./terraform/${{ matrix.tf_config }}
+          ls -ltra
