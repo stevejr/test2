@@ -37,14 +37,16 @@ jobs:
 
           while IFS= read -r dir
           do
+            echo "Processing dir: $dir"
+            
             case $dir in
-              .*staging* ) 
+              *staging* ) 
                 echo "Found environment related dir: $dir"
                 found_dir="staging";;
-              .*production-devclusters* ) 
+              *production-devclusters* ) 
                 echo "Found environment related dir: $dir"
                 found_dir="production-devclusters";;
-              .*production* ) 
+              *production* ) 
                 echo "Found environment related dir: $dir"
                 found_dir="production";;
               *modules* ) 
