@@ -25,7 +25,8 @@ jobs:
           # Declare an array of available environments
           declare -a availableEnvs=("staging/global" "staging/lc-staging1" "production/global" "production/eu-bored1" "production/lc-catalog1" "production/lc-production1" "production/us-bored1" "production-devclusters/global" "production-devclusters/eu-devcluster1")
 
-          git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' > directories.txt
+          git diff --name-only HEAD~1 | awk -F "/*[^/]*/*$" '{ print ($1 == "" ? "." : $1); }' | sort | uniq
+          # git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' > directories.txt
           tf_config=''
 
           while IFS= read -r dir
