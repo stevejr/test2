@@ -28,10 +28,10 @@ jobs:
           declare -a availableEnvs=("staging/global" "staging/lc-staging1" "production/global" "production/eu-bored1" "production/lc-catalog1" "production/lc-production1" "production/us-bored1" "production-devclusters/global" "production-devclusters/eu-devcluster1")
 
           git diff --name-only HEAD~1 | awk -F "/*[^/]*/*$" '{ print ($1 == "" ? "." : $1); }' | sort | uniq > directories.txt
-          git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' > directories1.txt
+          # git diff --dirstat=files,0 HEAD~1 | sed 's/^[ 0-9.]\+% //g' > directories1.txt
           
           cat directories.txt
-          cat directories1.txt
+          # cat directories1.txt
           
           tf_config=''
 
@@ -42,7 +42,7 @@ jobs:
             case $dir in
               *staging* | *production* ) 
                 echo "Found environment related dir: $dir"
-                found_dir=`echo $dir | cut -d "/" -f4 -f5`;;
+                found_dir=`echo $dir | cut -d "/" -f4,5`;;
               *modules* ) 
                 echo "Found a module related dir: $dir"
                 continue;;
